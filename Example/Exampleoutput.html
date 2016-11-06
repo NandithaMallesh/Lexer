@@ -1,0 +1,960 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01//EN"
+   "http://www.w3.org/TR/html4/strict.dtd">
+
+<html>
+<head>
+  <title></title>
+  <meta http-equiv="content-type" content="text/html; charset=utf-8">
+  <style type="text/css">
+td.linenos { background-color: #f0f0f0; padding-right: 10px; }
+span.lineno { background-color: #f0f0f0; padding: 0 5px 0 5px; }
+pre { line-height: 125%; }
+body .hll { background-color: #ffffcc }
+body  { background: #f8f8f8; }
+body .c { color: #408080; font-style: italic } /* Comment */
+body .err { border: 1px solid #FF0000 } /* Error */
+body .k { color: #008000; font-weight: bold } /* Keyword */
+body .o { color: #666666 } /* Operator */
+body .ch { color: #408080; font-style: italic } /* Comment.Hashbang */
+body .cm { color: #408080; font-style: italic } /* Comment.Multiline */
+body .cp { color: #BC7A00 } /* Comment.Preproc */
+body .cpf { color: #408080; font-style: italic } /* Comment.PreprocFile */
+body .c1 { color: #408080; font-style: italic } /* Comment.Single */
+body .cs { color: #408080; font-style: italic } /* Comment.Special */
+body .gd { color: #A00000 } /* Generic.Deleted */
+body .ge { font-style: italic } /* Generic.Emph */
+body .gr { color: #FF0000 } /* Generic.Error */
+body .gh { color: #000080; font-weight: bold } /* Generic.Heading */
+body .gi { color: #00A000 } /* Generic.Inserted */
+body .go { color: #888888 } /* Generic.Output */
+body .gp { color: #000080; font-weight: bold } /* Generic.Prompt */
+body .gs { font-weight: bold } /* Generic.Strong */
+body .gu { color: #800080; font-weight: bold } /* Generic.Subheading */
+body .gt { color: #0044DD } /* Generic.Traceback */
+body .kc { color: #008000; font-weight: bold } /* Keyword.Constant */
+body .kd { color: #008000; font-weight: bold } /* Keyword.Declaration */
+body .kn { color: #008000; font-weight: bold } /* Keyword.Namespace */
+body .kp { color: #008000 } /* Keyword.Pseudo */
+body .kr { color: #008000; font-weight: bold } /* Keyword.Reserved */
+body .kt { color: #B00040 } /* Keyword.Type */
+body .m { color: #666666 } /* Literal.Number */
+body .s { color: #BA2121 } /* Literal.String */
+body .na { color: #7D9029 } /* Name.Attribute */
+body .nb { color: #008000 } /* Name.Builtin */
+body .nc { color: #0000FF; font-weight: bold } /* Name.Class */
+body .no { color: #880000 } /* Name.Constant */
+body .nd { color: #AA22FF } /* Name.Decorator */
+body .ni { color: #999999; font-weight: bold } /* Name.Entity */
+body .ne { color: #D2413A; font-weight: bold } /* Name.Exception */
+body .nf { color: #0000FF } /* Name.Function */
+body .nl { color: #A0A000 } /* Name.Label */
+body .nn { color: #0000FF; font-weight: bold } /* Name.Namespace */
+body .nt { color: #008000; font-weight: bold } /* Name.Tag */
+body .nv { color: #19177C } /* Name.Variable */
+body .ow { color: #AA22FF; font-weight: bold } /* Operator.Word */
+body .w { color: #bbbbbb } /* Text.Whitespace */
+body .mb { color: #666666 } /* Literal.Number.Bin */
+body .mf { color: #666666 } /* Literal.Number.Float */
+body .mh { color: #666666 } /* Literal.Number.Hex */
+body .mi { color: #666666 } /* Literal.Number.Integer */
+body .mo { color: #666666 } /* Literal.Number.Oct */
+body .sa { color: #BA2121 } /* Literal.String.Affix */
+body .sb { color: #BA2121 } /* Literal.String.Backtick */
+body .sc { color: #BA2121 } /* Literal.String.Char */
+body .dl { color: #BA2121 } /* Literal.String.Delimiter */
+body .sd { color: #BA2121; font-style: italic } /* Literal.String.Doc */
+body .s2 { color: #BA2121 } /* Literal.String.Double */
+body .se { color: #BB6622; font-weight: bold } /* Literal.String.Escape */
+body .sh { color: #BA2121 } /* Literal.String.Heredoc */
+body .si { color: #BB6688; font-weight: bold } /* Literal.String.Interpol */
+body .sx { color: #008000 } /* Literal.String.Other */
+body .sr { color: #BB6688 } /* Literal.String.Regex */
+body .s1 { color: #BA2121 } /* Literal.String.Single */
+body .ss { color: #19177C } /* Literal.String.Symbol */
+body .bp { color: #008000 } /* Name.Builtin.Pseudo */
+body .fm { color: #0000FF } /* Name.Function.Magic */
+body .vc { color: #19177C } /* Name.Variable.Class */
+body .vg { color: #19177C } /* Name.Variable.Global */
+body .vi { color: #19177C } /* Name.Variable.Instance */
+body .vm { color: #19177C } /* Name.Variable.Magic */
+body .il { color: #666666 } /* Literal.Number.Integer.Long */
+
+  </style>
+</head>
+<body>
+<h2></h2>
+
+<div class="highlight"><pre><span></span><span class="c1">##################################################################################</span>
+<span class="c1"># Document Properties Section</span>
+
+<span class="kc">SET</span> <span class="kc">DOCUMENT</span> <span class="n">Name</span> <span class="o">=</span> <span class="s">&quot;Document name&quot;</span>
+<span class="kc">SET</span> <span class="kc">DOCUMENT</span> <span class="n">Description</span> <span class="o">=</span> <span class="s">&quot;Document description&quot;</span>
+<span class="kc">SET</span> <span class="kc">DOCUMENT</span> <span class="n">Version</span> <span class="o">=</span> <span class="s">&quot;1.0&quot;</span>
+<span class="kc">SET</span> <span class="kc">DOCUMENT</span> <span class="n">Copyright</span> <span class="o">=</span> <span class="s">&quot;Copyright (c) 2012, Nanditha. All Rights Reserved.&quot;</span>
+<span class="kc">SET</span> <span class="kc">DOCUMENT</span> <span class="n">Authors</span> <span class="o">=</span> <span class="s">&quot;Nanditha&quot;</span>
+<span class="kc">SET</span> <span class="kc">DOCUMENT</span> <span class="n">Licenses</span> <span class="o">=</span> <span class="s">&quot;Document license&quot;</span>
+<span class="kc">SET</span> <span class="kc">DOCUMENT</span> <span class="n">ContactInfo</span> <span class="o">=</span> <span class="s">&quot;your@email.com&quot;</span>
+
+<span class="c1">##################################################################################</span>
+<span class="c1"># NAMESPACE URLS</span>
+
+<span class="kc">DEFINE</span> <span class="n">NAMESPACE</span> <span class="n">ADO</span> <span class="kc">AS URL</span> <span class="s">&quot;http://belief.scai.fraunhofer.de/openbel/repository/namespaces/ADO.belns&quot;</span>
+<span class="kc">DEFINE</span> <span class="n">NAMESPACE</span> <span class="n">AFFX</span> <span class="kc">AS URL</span> <span class="s">&quot;http://resource.belframework.org/belframework/20150611/namespace/affy-probeset-ids.belns&quot;</span>
+<span class="kc">DEFINE</span> <span class="n">NAMESPACE</span> <span class="n">BRCO</span> <span class="kc">AS URL</span> <span class="s">&quot;http://belief.scai.fraunhofer.de/openbel/repository/namespaces/BRCO.belns&quot;</span>
+<span class="kc">DEFINE</span> <span class="n">NAMESPACE</span> <span class="n">CHEBI</span> <span class="kc">AS URL</span> <span class="s">&quot;http://resource.belframework.org/belframework/20150611/namespace/chebi.belns&quot;</span>
+<span class="kc">DEFINE</span> <span class="n">NAMESPACE</span> <span class="n">CHEBIID</span> <span class="kc">AS URL</span> <span class="s">&quot;http://resource.belframework.org/belframework/20150611/namespace/chebi-ids.belns&quot;</span>
+<span class="kc">DEFINE</span> <span class="n">NAMESPACE</span> <span class="n">CHEMBL</span> <span class="kc">AS URL</span> <span class="s">&quot;http://belief-demo.scai.fraunhofer.de/openbel/repository/namespaces/chembl-names.belns&quot;</span>
+<span class="kc">DEFINE</span> <span class="n">NAMESPACE</span> <span class="n">CHEMBLID</span> <span class="kc">AS URL</span> <span class="s">&quot;http://belief-demo.scai.fraunhofer.de/openbel/repository/namespaces/chembl-ids.belns&quot;</span>
+<span class="kc">DEFINE</span> <span class="n">NAMESPACE</span> <span class="n">CTO</span> <span class="kc">AS URL</span> <span class="s">&quot;http://belief.scai.fraunhofer.de/openbel/repository/namespaces/CTO.belns&quot;</span>
+<span class="kc">DEFINE</span> <span class="n">NAMESPACE</span> <span class="n">DO</span> <span class="kc">AS URL</span> <span class="s">&quot;http://resource.belframework.org/belframework/20150611/namespace/disease-ontology.belns&quot;</span>
+<span class="kc">DEFINE</span> <span class="n">NAMESPACE</span> <span class="n">DOID</span> <span class="kc">AS URL</span> <span class="s">&quot;http://resource.belframework.org/belframework/20150611/namespace/disease-ontology-ids.belns&quot;</span>
+<span class="kc">DEFINE</span> <span class="n">NAMESPACE</span> <span class="n">EGID</span> <span class="kc">AS URL</span> <span class="s">&quot;http://resource.belframework.org/belframework/20150611/namespace/entrez-gene-ids.belns&quot;</span>
+<span class="kc">DEFINE</span> <span class="n">NAMESPACE</span> <span class="n">FlyBase</span> <span class="kc">AS URL</span> <span class="s">&quot;http://belief.scai.fraunhofer.de/openbel/repository/namespaces/Dmel.belns&quot;</span>
+<span class="kc">DEFINE</span> <span class="n">NAMESPACE</span> <span class="n">GOBP</span> <span class="kc">AS URL</span> <span class="s">&quot;http://resource.belframework.org/belframework/20150611/namespace/go-biological-process.belns&quot;</span>
+<span class="kc">DEFINE</span> <span class="n">NAMESPACE</span> <span class="n">GOBPID</span> <span class="kc">AS URL</span> <span class="s">&quot;http://resource.belframework.org/belframework/20150611/namespace/go-biological-process-ids.belns&quot;</span>
+<span class="kc">DEFINE</span> <span class="n">NAMESPACE</span> <span class="n">GOCC</span> <span class="kc">AS URL</span> <span class="s">&quot;http://resource.belframework.org/belframework/20150611/namespace/go-cellular-component.belns&quot;</span>
+<span class="kc">DEFINE</span> <span class="n">NAMESPACE</span> <span class="n">GOCCID</span> <span class="kc">AS URL</span> <span class="s">&quot;http://resource.belframework.org/belframework/20150611/namespace/go-cellular-component-ids.belns&quot;</span>
+<span class="kc">DEFINE</span> <span class="n">NAMESPACE</span> <span class="n">HGNC</span> <span class="kc">AS URL</span> <span class="s">&quot;http://resource.belframework.org/belframework/20150611/namespace/hgnc-human-genes.belns&quot;</span>
+<span class="kc">DEFINE</span> <span class="n">NAMESPACE</span> <span class="n">LMSD</span> <span class="kc">AS URL</span> <span class="s">&quot;http://belief-demo.scai.fraunhofer.de/openbel/repository/namespaces/LMSD.belns&quot;</span>
+<span class="kc">DEFINE</span> <span class="n">NAMESPACE</span> <span class="n">MESHC</span> <span class="kc">AS URL</span> <span class="s">&quot;http://resource.belframework.org/belframework/20150611/namespace/mesh-chemicals.belns&quot;</span>
+<span class="kc">DEFINE</span> <span class="n">NAMESPACE</span> <span class="n">MESHCID</span> <span class="kc">AS URL</span> <span class="s">&quot;http://resource.belframework.org/belframework/20150611/namespace/mesh-chemicals-ids.belns&quot;</span>
+<span class="kc">DEFINE</span> <span class="n">NAMESPACE</span> <span class="n">MESHCS</span> <span class="kc">AS URL</span> <span class="s">&quot;http://resource.belframework.org/belframework/20150611/namespace/mesh-cellular-structures.belns&quot;</span>
+<span class="kc">DEFINE</span> <span class="n">NAMESPACE</span> <span class="n">MESHCSID</span> <span class="kc">AS URL</span> <span class="s">&quot;http://resource.belframework.org/belframework/20150611/namespace/mesh-cellular-structures-ids.belns&quot;</span>
+<span class="kc">DEFINE</span> <span class="n">NAMESPACE</span> <span class="n">MESHD</span> <span class="kc">AS URL</span> <span class="s">&quot;http://resource.belframework.org/belframework/20150611/namespace/mesh-diseases.belns&quot;</span>
+<span class="kc">DEFINE</span> <span class="n">NAMESPACE</span> <span class="n">MESHDID</span> <span class="kc">AS URL</span> <span class="s">&quot;http://resource.belframework.org/belframework/20150611/namespace/mesh-diseases-ids.belns&quot;</span>
+<span class="kc">DEFINE</span> <span class="n">NAMESPACE</span> <span class="n">MESHPP</span> <span class="kc">AS URL</span> <span class="s">&quot;http://resource.belframework.org/belframework/20150611/namespace/mesh-processes.belns&quot;</span>
+<span class="kc">DEFINE</span> <span class="n">NAMESPACE</span> <span class="n">MESHPPID</span> <span class="kc">AS URL</span> <span class="s">&quot;http://resource.belframework.org/belframework/20150611/namespace/mesh-processes-ids.belns&quot;</span>
+<span class="kc">DEFINE</span> <span class="n">NAMESPACE</span> <span class="n">MGI</span> <span class="kc">AS URL</span> <span class="s">&quot;http://resource.belframework.org/belframework/20150611/namespace/mgi-mouse-genes.belns&quot;</span>
+<span class="kc">DEFINE</span> <span class="n">NAMESPACE</span> <span class="n">NIFT</span> <span class="kc">AS URL</span> <span class="s">&quot;http://belief.scai.fraunhofer.de/openbel/repository/namespaces/NIFT.belns&quot;</span>
+<span class="kc">DEFINE</span> <span class="n">NAMESPACE</span> <span class="n">NTN</span> <span class="kc">AS URL</span> <span class="s">&quot;http://belief.scai.fraunhofer.de/openbel/repository/namespaces/Nutrition.belns&quot;</span>
+<span class="kc">DEFINE</span> <span class="n">NAMESPACE</span> <span class="n">PDO</span> <span class="kc">AS URL</span> <span class="s">&quot;http://belief.scai.fraunhofer.de/openbel/repository/namespaces/PDO.belns&quot;</span>
+<span class="kc">DEFINE</span> <span class="n">NAMESPACE</span> <span class="n">PH</span> <span class="kc">AS URL</span> <span class="s">&quot;http://belief-demo.scai.fraunhofer.de/openbel/repository/namespaces/Placeholder.belns&quot;</span>
+<span class="kc">DEFINE</span> <span class="n">NAMESPACE</span> <span class="n">PMIBP</span> <span class="kc">AS URL</span> <span class="s">&quot;http://belief-demo.scai.fraunhofer.de/BeliefDashboard/dicten/namespaces/pmibp.belns&quot;</span>
+<span class="kc">DEFINE</span> <span class="n">NAMESPACE</span> <span class="n">PMICHEM</span> <span class="kc">AS URL</span> <span class="s">&quot;http://belief-demo.scai.fraunhofer.de/BeliefDashboard/dicten/namespaces/pmichem.belns&quot;</span>
+<span class="kc">DEFINE</span> <span class="n">NAMESPACE</span> <span class="n">PMICOMP</span> <span class="kc">AS URL</span> <span class="s">&quot;http://belief-demo.scai.fraunhofer.de/BeliefDashboard/dicten/namespaces/pmicomp.belns&quot;</span>
+<span class="kc">DEFINE</span> <span class="n">NAMESPACE</span> <span class="n">PMIDIS</span> <span class="kc">AS URL</span> <span class="s">&quot;http://belief-demo.scai.fraunhofer.de/BeliefDashboard/dicten/namespaces/pmidis.belns&quot;</span>
+<span class="kc">DEFINE</span> <span class="n">NAMESPACE</span> <span class="n">PMIPFAM</span> <span class="kc">AS URL</span> <span class="s">&quot;http://belief-demo.scai.fraunhofer.de/BeliefDashboard/dicten/namespaces/pmipfam.belns&quot;</span>
+<span class="kc">DEFINE</span> <span class="n">NAMESPACE</span> <span class="n">PTS</span> <span class="kc">AS URL</span> <span class="s">&quot;http://belief.scai.fraunhofer.de/openbel/repository/namespaces/PTS.belns&quot;</span>
+<span class="kc">DEFINE</span> <span class="n">NAMESPACE</span> <span class="n">RGD</span> <span class="kc">AS URL</span> <span class="s">&quot;http://resource.belframework.org/belframework/20150611/namespace/rgd-rat-genes.belns&quot;</span>
+<span class="kc">DEFINE</span> <span class="n">NAMESPACE</span> <span class="n">SCHEM</span> <span class="kc">AS URL</span> <span class="s">&quot;http://resource.belframework.org/belframework/20150611/namespace/selventa-legacy-chemicals.belns&quot;</span>
+<span class="kc">DEFINE</span> <span class="n">NAMESPACE</span> <span class="n">SCOMP</span> <span class="kc">AS URL</span> <span class="s">&quot;http://resource.belframework.org/belframework/20150611/namespace/selventa-named-complexes.belns&quot;</span>
+<span class="kc">DEFINE</span> <span class="n">NAMESPACE</span> <span class="n">SDIS</span> <span class="kc">AS URL</span> <span class="s">&quot;http://resource.belframework.org/belframework/20150611/namespace/selventa-legacy-diseases.belns&quot;</span>
+<span class="kc">DEFINE</span> <span class="n">NAMESPACE</span> <span class="n">SFAM</span> <span class="kc">AS URL</span> <span class="s">&quot;http://resource.belframework.org/belframework/20150611/namespace/selventa-protein-families.belns&quot;</span>
+<span class="kc">DEFINE</span> <span class="n">NAMESPACE</span> <span class="n">SP</span> <span class="kc">AS URL</span> <span class="s">&quot;http://resource.belframework.org/belframework/20150611/namespace/swissprot.belns&quot;</span>
+<span class="kc">DEFINE</span> <span class="n">NAMESPACE</span> <span class="n">SPID</span> <span class="kc">AS URL</span> <span class="s">&quot;http://resource.belframework.org/belframework/20150611/namespace/swissprot-ids.belns&quot;</span>
+<span class="kc">DEFINE</span> <span class="n">NAMESPACE</span> <span class="n">dbSNP</span> <span class="kc">AS URL</span> <span class="s">&quot;http://belief.scai.fraunhofer.de/openbel/repository/namespaces/SNP.belns&quot;</span>
+
+
+<span class="c1"># ANNOTATION URLS</span>
+
+<span class="kc">DEFINE</span> <span class="n">ANNOTATION</span> <span class="n">Anatomy</span> <span class="kc">AS URL</span> <span class="s">&quot;http://resource.belframework.org/belframework/20131211/annotation/anatomy.belanno&quot;</span>
+<span class="kc">DEFINE</span> <span class="n">ANNOTATION</span> <span class="n">BodyRegion</span> <span class="kc">AS URL</span> <span class="s">&quot;http://resource.belframework.org/belframework/1.0/annotation/mesh-body-region.belanno&quot;</span>
+<span class="kc">DEFINE</span> <span class="n">ANNOTATION</span> <span class="n">CardiovascularSystem</span> <span class="kc">AS URL</span> <span class="s">&quot;http://resource.belframework.org/belframework/1.0/annotation/mesh-cardiovascular-system.belanno&quot;</span>
+<span class="kc">DEFINE</span> <span class="n">ANNOTATION</span> <span class="n">Cell</span> <span class="kc">AS URL</span> <span class="s">&quot;http://resource.belframework.org/belframework/20131211/annotation/cell.belanno&quot;</span>
+<span class="kc">DEFINE</span> <span class="n">ANNOTATION</span> <span class="n">CellLine</span> <span class="kc">AS URL</span> <span class="s">&quot;http://resource.belframework.org/belframework/20131211/annotation/cell-line.belanno&quot;</span>
+<span class="kc">DEFINE</span> <span class="n">ANNOTATION</span> <span class="n">CellStructure</span> <span class="kc">AS URL</span> <span class="s">&quot;http://resource.belframework.org/belframework/20131211/annotation/cell-structure.belanno&quot;</span>
+<span class="kc">DEFINE</span> <span class="n">ANNOTATION</span> <span class="n">DigestiveSystem</span> <span class="kc">AS URL</span> <span class="s">&quot;http://resource.belframework.org/belframework/1.0/annotation/mesh-digestive-system.belanno&quot;</span>
+<span class="kc">DEFINE</span> <span class="n">ANNOTATION</span> <span class="n">Disease</span> <span class="kc">AS URL</span> <span class="s">&quot;http://resource.belframework.org/belframework/20131211/annotation/disease.belanno&quot;</span>
+<span class="kc">DEFINE</span> <span class="n">ANNOTATION</span> <span class="n">FluidAndSecretion</span> <span class="kc">AS URL</span> <span class="s">&quot;http://resource.belframework.org/belframework/1.0/annotation/mesh-fluid-and-secretion.belanno&quot;</span>
+<span class="kc">DEFINE</span> <span class="n">ANNOTATION</span> <span class="n">HemicAndImmuneSystem</span> <span class="kc">AS URL</span> <span class="s">&quot;http://resource.belframework.org/belframework/1.0/annotation/mesh-hemic-and-immune-system.belanno&quot;</span>
+<span class="kc">DEFINE</span> <span class="n">ANNOTATION</span> <span class="n">IntegumentarySystem</span> <span class="kc">AS URL</span> <span class="s">&quot;http://resource.belframework.org/belframework/1.0/annotation/mesh-integumentary-system.belanno&quot;</span>
+<span class="kc">DEFINE</span> <span class="n">ANNOTATION</span> <span class="n">MeSHAnatomy</span> <span class="kc">AS URL</span> <span class="s">&quot;http://resource.belframework.org/belframework/20131211/annotation/mesh-anatomy.belanno&quot;</span>
+<span class="kc">DEFINE</span> <span class="n">ANNOTATION</span> <span class="n">MeSHDisease</span> <span class="kc">AS URL</span> <span class="s">&quot;http://resource.belframework.org/belframework/20131211/annotation/mesh-diseases.belanno&quot;</span>
+<span class="kc">DEFINE</span> <span class="n">ANNOTATION</span> <span class="n">NervousSystem</span> <span class="kc">AS URL</span> <span class="s">&quot;http://resource.belframework.org/belframework/1.0/annotation/mesh-nervous-system.belanno&quot;</span>
+<span class="kc">DEFINE</span> <span class="n">ANNOTATION</span> <span class="n">RespiratorySystem</span> <span class="kc">AS URL</span> <span class="s">&quot;http://resource.belframework.org/belframework/1.0/annotation/mesh-respiratory-system.belanno&quot;</span>
+<span class="kc">DEFINE</span> <span class="n">ANNOTATION</span> <span class="n">Species</span> <span class="kc">AS URL</span> <span class="s">&quot;http://resource.belframework.org/belframework/20131211/annotation/species-taxonomy-id.belanno&quot;</span>
+<span class="kc">DEFINE</span> <span class="n">ANNOTATION</span> <span class="n">Tissue</span> <span class="kc">AS URL</span> <span class="s">&quot;http://resource.belframework.org/belframework/1.0/annotation/mesh-tissue.belanno&quot;</span>
+<span class="kc">DEFINE</span> <span class="n">ANNOTATION</span> <span class="n">UrogenitalSystem</span> <span class="kc">AS URL</span> <span class="s">&quot;http://resource.belframework.org/belframework/1.0/annotation/mesh-urogenital-system.belanno&quot;</span>
+<span class="c1">##################################################################################</span>
+<span class="c1"># Statements Section</span>
+
+<span class="kc">SET</span> <span class="kc">STATEMENT_GROUP</span> <span class="o">=</span> <span class="s">&quot;Group 1&quot;</span>
+
+<span class="c1"># Add statements below this comment</span>
+
+<span class="c1"># Citation :source,&quot;first line&quot;,PubMed id&quot;</span>
+
+<span class="c1">########################################### 1 ###################################</span>
+
+<span class="kc">SET</span> <span class="n">Citation</span> <span class="o">=</span> <span class="p">{</span><span class="s">&quot;PubMed&quot;</span><span class="p">,</span><span class="s">&quot;J Immunol. 2012 Jul 1;189(1):381-92. doi: 10.4049/jimmunol.1200409. Epub 2012 Jun 1.&quot;</span><span class="p">,</span><span class="s">&quot;22661091&quot;</span><span class="p">}</span>
+<span class="kc">SET</span> <span class="n">Evidence</span> <span class="o">=</span> <span class="s">&quot;The recruitment of neutrophils to the brain can contribute to neurotoxicity, </span>
+<span class="s">particularly during acute brain injuries, such as cerebral ischemia, trauma, and seizures.&quot;</span>
+
+<span class="nb">a</span><span class="p">(</span><span class="s">&quot;neutrophils&quot;</span><span class="p">)</span> <span class="nb">--</span> <span class="nb">path</span><span class="p">(</span><span class="n">MESHD</span><span class="p">:</span><span class="s">&quot;Neurotoxicity Syndromes&quot;</span><span class="p">)</span>
+<span class="nb">a</span><span class="p">(</span><span class="s">&quot;neutrophils&quot;</span><span class="p">)</span> <span class="nb">--</span> <span class="nb">path</span><span class="p">(</span><span class="n">MESHD</span><span class="p">:</span><span class="s">&quot;Brain Ischemia&quot;</span><span class="p">)</span>
+<span class="nb">a</span><span class="p">(</span><span class="s">&quot;neutrophils&quot;</span><span class="p">)</span> <span class="nb">--</span> <span class="nb">a</span><span class="p">(</span><span class="s">&quot;trauma&quot;</span><span class="p">)</span>
+<span class="nb">a</span><span class="p">(</span><span class="s">&quot;neutrophils&quot;</span><span class="p">)</span> <span class="nb">--</span> <span class="nb">path</span><span class="p">(</span><span class="n">MESHD</span><span class="p">:</span><span class="s">&quot;Seizures&quot;</span><span class="p">)</span>
+
+<span class="c1">##########################################2##########################################</span>
+
+<span class="kc">SET</span> <span class="n">Citation</span> <span class="o">=</span> <span class="p">{</span><span class="s">&quot;PubMed&quot;</span><span class="p">,</span><span class="s">&quot;J Neuroinflammation. 2012 Jun 20;9:135. doi: 10.1186/1742-2094-9-135.&quot;</span><span class="p">,</span><span class="s">&quot;22716035&quot;</span><span class="p">}</span>
+<span class="kc">SET</span> <span class="n">Evidence</span> <span class="o">=</span> <span class="s">&quot;In a mouse model of Alzheimer&#39;s disease (AD) the orally administered natural product 4&#39;-O-methylhonokiol (MH) has been shown to prevent </span>
+<span class="s">amyloidogenesis and progression of AD by inhibiting neuroinflammation.&quot;</span>
+
+<span class="kc">SET</span> <span class="n">Species</span> <span class="o">=</span> <span class="s">&quot;10090&quot;</span>
+
+<span class="nb">a</span><span class="p">(</span><span class="n">MESHC</span><span class="p">:</span><span class="s">&quot;4-O-methylhonokiol&quot;</span><span class="p">)</span> <span class="nb">-|</span> <span class="nb">path</span><span class="p">(</span><span class="n">MESHD</span><span class="p">:</span><span class="s">&quot;Amyloidosis&quot;</span><span class="p">)</span>
+<span class="nb">a</span><span class="p">(</span><span class="n">MESHC</span><span class="p">:</span><span class="s">&quot;4-O-methylhonokiol&quot;</span><span class="p">)</span> <span class="nb">-|</span> <span class="nb">path</span><span class="p">(</span><span class="n">ADO</span><span class="p">:</span><span class="s">&quot;neuroinflammation&quot;</span><span class="p">)</span>
+
+<span class="kc">SET</span> <span class="n">Evidence</span> <span class="o">=</span> <span class="s">&quot;We argue that the novel cannabimimetic MH may exert its beneficial effects </span>
+<span class="s">via modulation of CB₂ receptors expressed in microglial cells and astrocytes&quot;</span>
+
+<span class="kc">SET</span> <span class="n">Cell</span> <span class="o">=</span><span class="p">{</span><span class="s">&quot;microglial cell&quot;</span><span class="p">,</span><span class="s">&quot;astrocyte&quot;</span><span class="p">}</span>
+
+<span class="nb">a</span><span class="p">(</span><span class="n">MESHC</span><span class="p">:</span><span class="s">&quot;4-O-methylhonokiol&quot;</span><span class="p">)</span> <span class="nb">--</span> <span class="nb">p</span><span class="p">(</span><span class="n">MGI</span><span class="p">:</span><span class="s">&quot;Cnr2&quot;</span><span class="p">)</span>
+
+<span class="c1">#########################################3#########################################</span>
+
+<span class="kc">SET</span> <span class="n">Citation</span> <span class="o">=</span> <span class="p">{</span><span class="s">&quot;PubMed&quot;</span><span class="p">,</span><span class="s">&quot;Proteomics. 2012 Aug;12(15-16):2571-83. doi: 10.1002/pmic.201200024.&quot;</span><span class="p">,</span><span class="s">&quot;22778045&quot;</span><span class="p">}</span>
+<span class="kc">SET</span> <span class="n">Evidence</span> <span class="o">=</span><span class="s">&quot;Pathway and network analysis indicate that hypothermia influences various biological functions of</span>
+<span class="s">glia such as molecular transport, cell movement, immune response, cell death, and stress response&quot;</span>
+
+<span class="kc">SET</span> <span class="n">Species</span> <span class="o">=</span> <span class="s">&quot;10090&quot;</span>
+<span class="kc">SET</span> <span class="n">Cell</span> <span class="o">=</span> <span class="s">&quot;glial cell&quot;</span>
+
+<span class="nb">path</span><span class="p">(</span><span class="n">MESHD</span><span class="p">:</span><span class="s">&quot;Hypothermia&quot;</span><span class="p">)</span> <span class="nb">-&gt;</span> <span class="nb">bp</span><span class="p">(</span><span class="n">MESHPP</span><span class="p">:</span><span class="s">&quot;Cell Movement&quot;</span><span class="p">)</span>
+<span class="nb">path</span><span class="p">(</span><span class="n">MESHD</span><span class="p">:</span><span class="s">&quot;Hypothermia&quot;</span><span class="p">)</span> <span class="nb">-&gt;</span> <span class="nb">bp</span><span class="p">(</span><span class="n">GOBP</span><span class="p">:</span><span class="s">&quot;immune response&quot;</span><span class="p">)</span>
+<span class="nb">path</span><span class="p">(</span><span class="n">MESHD</span><span class="p">:</span><span class="s">&quot;Hypothermia&quot;</span><span class="p">)</span> <span class="nb">-&gt;</span> <span class="nb">bp</span><span class="p">(</span><span class="n">MESHPP</span><span class="p">:</span><span class="s">&quot;Cell Death&quot;</span><span class="p">)</span>
+<span class="nb">path</span><span class="p">(</span><span class="n">MESHD</span><span class="p">:</span><span class="s">&quot;Hypothermia&quot;</span><span class="p">)</span> <span class="nb">-&gt;</span> <span class="nb">bp</span><span class="p">(</span><span class="n">GOBP</span><span class="p">:</span><span class="s">&quot;regulation of response to stress&quot;</span><span class="p">)</span>
+<span class="nb">path</span><span class="p">(</span><span class="n">MESHD</span><span class="p">:</span><span class="s">&quot;Hypothermia&quot;</span><span class="p">)</span> <span class="nb">-&gt;</span> <span class="nb">bp</span><span class="p">(</span><span class="n">MESHPP</span><span class="p">:</span><span class="s">&quot;Biological Transport&quot;</span><span class="p">)</span>
+
+<span class="kc">SET</span> <span class="n">Evidence</span> <span class="o">=</span><span class="s">&quot;In conclusion, moderate hypothermia seems to have a significant effect on the protein expression </span>
+<span class="s">profiles of brain glia and possibly ensuing neuroinflammation&quot;</span>
+
+<span class="nb">path</span><span class="p">(</span><span class="n">MESHD</span><span class="p">:</span><span class="s">&quot;Hypothermia&quot;</span><span class="p">)</span> <span class="nb">--</span> <span class="nb">bp</span><span class="p">(</span><span class="n">GOBP</span><span class="p">:</span><span class="s">&quot;gene expression&quot;</span><span class="p">)</span>
+<span class="nb">bp</span><span class="p">(</span><span class="n">GOBP</span><span class="p">:</span><span class="s">&quot;gene expression&quot;</span><span class="p">)</span> <span class="nb">--</span> <span class="nb">path</span><span class="p">(</span><span class="n">ADO</span><span class="p">:</span><span class="s">&quot;neuroinflammation&quot;</span><span class="p">)</span>
+
+<span class="c1">###########################################4############################################</span>
+
+<span class="kc">SET</span> <span class="n">Citation</span> <span class="o">=</span> <span class="p">{</span><span class="s">&quot;PubMed&quot;</span><span class="p">,</span><span class="s">&quot;J Virol. 2012 Oct;86(19):10377-83. doi: 10.1128/JVI.01340-12. Epub 2012 Jul 11.&quot;</span><span class="p">,</span><span class="s">&quot;22787236&quot;</span><span class="p">}</span>
+<span class="kc">SET</span> <span class="n">Evidence</span> <span class="o">=</span> <span class="s">&quot;Neurodegenerative diseases are typically associated with an activation of glia and an increased level of cytokines&quot;</span>
+
+<span class="kc">SET</span> <span class="n">Species</span> <span class="o">=</span> <span class="s">&quot;10090&quot;</span>
+
+<span class="nb">path</span><span class="p">(</span><span class="n">MESHD</span><span class="p">:</span><span class="s">&quot;Neurodegenerative Diseases&quot;</span><span class="p">)</span> <span class="nb">--</span> <span class="nb">bp</span><span class="p">(</span><span class="n">GOBP</span><span class="p">:</span><span class="s">&quot;regulation of cytokine activity&quot;</span><span class="p">)</span>
+<span class="nb">path</span><span class="p">(</span><span class="n">MESHD</span><span class="p">:</span><span class="s">&quot;Neurodegenerative Diseases&quot;</span><span class="p">)</span> <span class="nb">--</span> <span class="nb">bp</span><span class="p">(</span><span class="n">GOBP</span><span class="p">:</span><span class="s">&quot;microglial cell activation&quot;</span><span class="p">)</span>
+
+<span class="kc">SET</span> <span class="n">Evidence</span> <span class="o">=</span><span class="s">&quot;Here, in time course studies of C57BL/10 mice intracerebrally inoculated with 22L scrapie, </span>
+<span class="s">abnormal protease-resistant prion protein (PrPres), astrogliosis, and microgliosis were first detected at 40 days</span>
+<span class="s">after intracerebral scrapie inoculation&quot;</span>
+
+<span class="nb">path</span><span class="p">(</span><span class="n">MESHD</span><span class="p">:</span><span class="s">&quot;Scrapie&quot;</span><span class="p">)</span> <span class="nb">-&gt;</span> <span class="nb">path</span><span class="p">(</span><span class="n">ADO</span><span class="p">:</span><span class="s">&quot;astrocyte_activation&quot;</span><span class="p">)</span>
+<span class="nb">path</span><span class="p">(</span><span class="n">MESHD</span><span class="p">:</span><span class="s">&quot;Scrapie&quot;</span><span class="p">)</span> <span class="nb">-&gt;</span> <span class="nb">path</span><span class="p">(</span><span class="n">ADO</span><span class="p">:</span><span class="s">&quot;Microglial_activation&quot;</span><span class="p">)</span>
+
+
+<span class="kc">SET</span> <span class="n">Evidence</span> <span class="o">=</span><span class="s">&quot;In cytokine studies, IL-12p40 was first elevated by 60 days;</span>
+<span class="s">CCL3, IL-1β, and CXCL1 were elevated by 80 days; and CCL2 and CCL5 were elevated by 115 days.&quot;</span>
+
+<span class="nb">path</span><span class="p">(</span><span class="n">MESHD</span><span class="p">:</span><span class="s">&quot;Scrapie&quot;</span><span class="p">)</span> <span class="nb">-&gt;</span> <span class="nb">p</span><span class="p">(</span><span class="n">MGI</span><span class="p">:</span><span class="n">Il12b</span><span class="p">)</span>
+<span class="nb">path</span><span class="p">(</span><span class="n">MESHD</span><span class="p">:</span><span class="s">&quot;Scrapie&quot;</span><span class="p">)</span> <span class="nb">-&gt;</span> <span class="nb">p</span><span class="p">(</span><span class="n">MGI</span><span class="p">:</span><span class="n">Ccl3</span><span class="p">)</span>
+<span class="nb">path</span><span class="p">(</span><span class="n">MESHD</span><span class="p">:</span><span class="s">&quot;Scrapie&quot;</span><span class="p">)</span> <span class="nb">-&gt;</span> <span class="nb">p</span><span class="p">(</span><span class="n">MGI</span><span class="p">:</span><span class="n">Il1b</span><span class="p">)</span>
+<span class="nb">path</span><span class="p">(</span><span class="n">MESHD</span><span class="p">:</span><span class="s">&quot;Scrapie&quot;</span><span class="p">)</span> <span class="nb">-&gt;</span> <span class="nb">p</span><span class="p">(</span><span class="n">MGI</span><span class="p">:</span><span class="n">Cxcl1</span><span class="p">)</span>
+<span class="nb">path</span><span class="p">(</span><span class="n">MESHD</span><span class="p">:</span><span class="s">&quot;Scrapie&quot;</span><span class="p">)</span> <span class="nb">-&gt;</span> <span class="nb">p</span><span class="p">(</span><span class="n">MGI</span><span class="p">:</span><span class="n">Ccl5</span><span class="p">)</span>
+<span class="nb">path</span><span class="p">(</span><span class="n">MESHD</span><span class="p">:</span><span class="s">&quot;Scrapie&quot;</span><span class="p">)</span> <span class="nb">-&gt;</span> <span class="nb">p</span><span class="p">(</span><span class="n">MGI</span><span class="p">:</span><span class="n">Ccl2</span><span class="p">)</span>
+
+<span class="kc">SET</span> <span class="n">Evidence</span> <span class="o">=</span> <span class="s">&quot;Thus, neither IL-12p40 nor IL-12p35 molecules were required for prion disease-associated </span>
+<span class="s">neurodegeneration or neuroinflammation.&quot;</span>
+
+<span class="nb">p</span><span class="p">(</span><span class="n">MGI</span><span class="p">:</span><span class="n">Il12b</span><span class="p">)</span> <span class="nb">causesNoChange</span> <span class="nb">path</span><span class="p">(</span><span class="n">MESHD</span><span class="p">:</span><span class="s">&quot;Prion Diseases&quot;</span><span class="p">)</span>
+<span class="nb">p</span><span class="p">(</span><span class="n">MGI</span><span class="p">:</span><span class="n">Il12a</span><span class="p">)</span> <span class="nb">causesNoChange</span> <span class="nb">path</span><span class="p">(</span><span class="n">MESHD</span><span class="p">:</span><span class="s">&quot;Prion Diseases&quot;</span><span class="p">)</span>
+
+
+<span class="c1">##################################################5#########################</span>
+
+<span class="kc">SET</span> <span class="n">Citation</span> <span class="o">=</span> <span class="p">{</span><span class="s">&quot;PubMed&quot;</span><span class="p">,</span><span class="s">&quot;J Neuroinflammation. 2012 Jul 12;9:171. doi: 10.1186/1742-2094-9-171.&quot;</span><span class="p">,</span><span class="s">&quot;22788993&quot;</span><span class="p">}</span>
+<span class="kc">SET</span> <span class="n">Species</span> <span class="o">=</span> <span class="s">&quot;10090&quot;</span>
+
+<span class="kc">SET</span> <span class="n">Evidence</span> <span class="o">=</span><span class="s">&quot;Production of the chemokine CCL2 by cells of the neurovascular unit (NVU) </span>
+<span class="s">drives critical aspects of neuroinflammation&quot;</span>
+
+<span class="kc">SET</span> <span class="n">NervousSystem</span> <span class="o">=</span> <span class="s">&quot;Blood-Brain Barrier&quot;</span>
+<span class="nb">p</span><span class="p">(</span><span class="n">MGI</span><span class="p">:</span><span class="n">Ccl2</span><span class="p">)</span><span class="nb">--</span> <span class="nb">path</span><span class="p">(</span><span class="n">ADO</span><span class="p">:</span><span class="s">&quot;neuroinflammation&quot;</span><span class="p">)</span>
+
+<span class="kc">SET</span> <span class="n">Evidence</span> <span class="o">=</span><span class="s">&quot;Accordingly, we sought to determine if the compound bindarit, which inhibits CCL2 synthesis&quot;</span>
+
+<span class="nb">a</span><span class="p">(</span><span class="s">&quot;bindarit&quot;</span><span class="p">)</span> <span class="nb">-|</span> <span class="nb">p</span><span class="p">(</span><span class="n">MGI</span><span class="p">:</span><span class="n">Ccl2</span><span class="p">)</span>
+
+<span class="kc">SET</span> <span class="n">Evidence</span> <span class="o">=</span> <span class="s">&quot;Bindarit repressed CCL2 expression by all three cultured cells and </span>
+<span class="s">antagonized upregulated expression of CCL2 in both brain and spinal cord in vivo following LPS administration&quot;</span>
+
+<span class="kc">SET</span> <span class="n">Cell</span> <span class="o">=</span> <span class="p">{</span><span class="s">&quot;astrocyte&quot;</span><span class="p">,</span><span class="s">&quot;microglial cell&quot;</span><span class="p">,</span><span class="s">&quot;cerebral cortex endothelial cell&quot;</span><span class="p">}</span>
+<span class="nb">a</span><span class="p">(</span><span class="s">&quot;bindarit&quot;</span><span class="p">)</span> <span class="nb">-|</span> <span class="nb">p</span><span class="p">(</span><span class="n">MGI</span><span class="p">:</span><span class="n">Ccl2</span><span class="p">)</span>
+
+<span class="kc">SET</span> <span class="n">Anatomy</span> <span class="o">=</span><span class="p">{</span><span class="s">&quot;brain&quot;</span><span class="p">,</span><span class="s">&quot;spinal cord&quot;</span><span class="p">}</span>
+<span class="nb">a</span><span class="p">(</span><span class="s">&quot;bindarit&quot;</span><span class="p">)</span> <span class="nb">-|</span> <span class="nb">p</span><span class="p">(</span><span class="n">MGI</span><span class="p">:</span><span class="n">Ccl2</span><span class="p">)</span>
+
+<span class="kc">SET</span> <span class="n">Evidence</span> <span class="o">=</span> <span class="s">&quot; Bindarit also significantly modified the course and severity of clinical EAE,</span>
+<span class="s">diminished the incidence and onset of disease, and evidenced signs of disease reversal.&quot;</span>
+
+<span class="nb">a</span><span class="p">(</span><span class="s">&quot;bindarit&quot;</span><span class="p">)</span> <span class="nb">--</span> <span class="nb">a</span><span class="p">(</span><span class="s">&quot;experimental autoimmune encephalomyelitis&quot;</span><span class="p">)</span>
+
+
+
+<span class="c1">###########################################6######################################</span>
+
+<span class="kc">SET</span> <span class="n">Citation</span> <span class="o">=</span> <span class="p">{</span><span class="s">&quot;PubMed&quot;</span><span class="p">,</span><span class="s">&quot;J Neuroinflammation. 2012 Jul 20;9:177. doi: 10.1186/1742-2094-9-177.&quot;</span><span class="p">,</span><span class="s">&quot;22818222&quot;</span><span class="p">}</span>
+<span class="kc">SET</span> <span class="n">Species</span> <span class="o">=</span> <span class="s">&quot;9606&quot;</span> 
+
+<span class="kc">SET</span> <span class="n">Evidence</span> <span class="o">=</span><span class="s">&quot;CCAAT enhancer-binding protein (C/EBP)β regulates gene expression in multiple organ systems and cell types, including astrocytes in the central nervous system (CNS)&quot;</span>
+<span class="nb">p</span><span class="p">(</span><span class="n">HGNC</span><span class="p">:</span><span class="n">IL1B</span><span class="p">)</span> <span class="nb">--</span> <span class="nb">p</span><span class="p">(</span><span class="n">HGNC</span><span class="p">:</span><span class="n">CEBPB</span><span class="p">)</span>
+
+<span class="kc">SET</span> <span class="n">Evidence</span> <span class="o">=</span><span class="s">&quot; Inflammatory stimuli, interleukin (IL)-1β, </span>
+<span class="s">tumor necrosis factor-α, human immunodeficiency virus (HIV)-1 and </span>
+<span class="s">lipopolysaccharide induce astrocyte C/EBPβ expression.&quot;</span>
+
+<span class="nb">a</span><span class="p">(</span><span class="n">SCHEM</span><span class="p">:</span><span class="n">Lipopolysaccharide</span><span class="p">)</span> <span class="nb">-&gt;</span> <span class="nb">r</span><span class="p">(</span><span class="n">HGNC</span><span class="p">:</span><span class="n">CEBPB</span><span class="p">)</span>
+<span class="nb">p</span><span class="p">(</span><span class="n">HGNC</span><span class="p">:</span><span class="n">TNF</span><span class="p">)</span> <span class="nb">-&gt;</span> <span class="nb">r</span><span class="p">(</span><span class="n">HGNC</span><span class="p">:</span><span class="n">CEBPB</span><span class="p">)</span>
+<span class="nb">p</span><span class="p">(</span><span class="n">HGNC</span><span class="p">:</span><span class="n">IL1B</span><span class="p">)</span> <span class="nb">-&gt;</span> <span class="nb">r</span><span class="p">(</span><span class="n">HGNC</span><span class="p">:</span><span class="n">CEBPB</span><span class="p">)</span>
+<span class="nb">a</span><span class="p">(</span><span class="n">SCHEM</span><span class="p">:</span><span class="s">&quot;HIV-1&quot;</span><span class="p">)</span> <span class="nb">-&gt;</span> <span class="nb">r</span><span class="p">(</span><span class="n">HGNC</span><span class="p">:</span><span class="n">CEBPB</span><span class="p">)</span>
+
+<span class="kc">SET</span> <span class="n">Evidence</span> <span class="o">=</span><span class="s">&quot;C/EBPβ is detectable in brains of Alzheimer&#39;s disease (AD), Parkinson&#39;s disease (PD) and HIV-1-associated dementia (HAD) patients,</span>
+<span class="s">yet little is known about how C/EBPβ contributes to astrocyte gene regulation during neuroinflammation.&quot;</span>
+
+<span class="nb">path</span><span class="p">(</span><span class="n">MESHD</span><span class="p">:</span><span class="n">Dementia</span><span class="p">)</span> <span class="nb">--</span> <span class="nb">path</span><span class="p">(</span><span class="n">MESHD</span><span class="p">:</span><span class="s">&quot;Alzheimer Disease&quot;</span><span class="p">)</span>
+
+
+<span class="kc">SET</span> <span class="n">Evidence</span> <span class="o">=</span><span class="s">&quot;Astrocytes were treated with mitogen-activated protein kinase-selective inhibitors, </span>
+<span class="s">then with IL-1β for 12 or 24 h followed by COX-2 and BDKRB2, expression analyses&quot;</span>
+
+<span class="nb">p</span><span class="p">(</span><span class="n">HGNC</span><span class="p">:</span><span class="n">IL1B</span><span class="p">)</span> <span class="nb">--</span> <span class="nb">a</span><span class="p">(</span><span class="n">CHEBI</span><span class="p">:</span><span class="n">mitogen</span><span class="p">)</span>
+<span class="nb">p</span><span class="p">(</span><span class="n">HGNC</span><span class="p">:</span><span class="n">PTGS2</span><span class="p">)</span> <span class="nb">--</span> <span class="nb">a</span><span class="p">(</span><span class="n">CHEBI</span><span class="p">:</span><span class="n">mitogen</span><span class="p">)</span>
+
+<span class="kc">SET</span> <span class="n">Evidence</span> <span class="o">=</span> <span class="s">&quot;Inhibiting extracellular-regulated kinase (ERK)1/2 </span>
+<span class="s">activation blocked IL-1β-induced BDKRB2 mRNA expression while increasing COX-2 expression.&quot;</span>
+
+<span class="nb">p</span><span class="p">(</span><span class="n">HGNC</span><span class="p">:</span><span class="n">PTGS2</span><span class="p">)</span> <span class="nb">--</span> <span class="nb">p</span><span class="p">(</span><span class="n">HGNC</span><span class="p">:</span><span class="n">MAPK3</span><span class="p">)</span>  
+<span class="nb">p</span><span class="p">(</span><span class="n">HGNC</span><span class="p">:</span><span class="n">BDKRB2</span><span class="p">)</span> <span class="nb">--</span> <span class="nb">p</span><span class="p">(</span><span class="n">HGNC</span><span class="p">:</span><span class="n">MAPK3</span><span class="p">)</span>
+<span class="nb">p</span><span class="p">(</span><span class="n">HGNC</span><span class="p">:</span><span class="n">IL1B</span><span class="p">)</span> <span class="nb">--</span> <span class="nb">p</span><span class="p">(</span><span class="n">HGNC</span><span class="p">:</span><span class="n">MAPK3</span><span class="p">)</span>
+<span class="nb">p</span><span class="p">(</span><span class="n">HGNC</span><span class="p">:</span><span class="n">PTGS2</span><span class="p">)</span> <span class="nb">--</span> <span class="nb">p</span><span class="p">(</span><span class="n">HGNC</span><span class="p">:</span><span class="n">IL1B</span><span class="p">)</span>
+
+<span class="kc">SET</span> <span class="n">Evidence</span> <span class="o">=</span><span class="s">&quot;Additionally, this work suggests p38K and ERK1/2 pathways may regulate gene expression in a </span>
+<span class="s">complementary manner to fine tune the IL-1β-mediated astrocyte inflammatory response.&quot;</span>
+
+<span class="nb">p</span><span class="p">(</span><span class="n">HGNC</span><span class="p">:</span><span class="n">IL1B</span><span class="p">)</span> <span class="nb">-&gt;</span> <span class="nb">bp</span><span class="p">(</span><span class="n">GOBP</span><span class="p">:</span><span class="s">&quot;inflammatory response&quot;</span><span class="p">)</span>
+
+
+<span class="c1">############################################7#########################</span>
+<span class="kc">SET</span> <span class="n">Citation</span> <span class="o">=</span> <span class="p">{</span><span class="s">&quot;PubMed&quot;</span><span class="p">,</span><span class="s">&quot;Proc Natl Acad Sci U S A. 2012 Aug 28;109(35):E2334-42. doi: 10.1073/pnas.1209577109. Epub 2012 Jul 23.&quot;</span><span class="p">,</span><span class="s">&quot;22826245&quot;</span><span class="p">}</span>
+
+<span class="kc">SET</span> <span class="n">Species</span> <span class="o">=</span><span class="s">&quot;10090&quot;</span>
+
+<span class="kc">SET</span> <span class="n">Evidence</span> <span class="o">=</span> <span class="s">&quot;Here we investigated the contribution of astrocytes to neurodegeneration in multiple sulfatase deficiency (MSD), a severe lysosomal</span>
+<span class="s">storage disorder caused by mutations in the sulfatase modifying factor 1 (SUMF1) gene.&quot;</span>
+
+<span class="nb">p</span><span class="p">(</span><span class="n">HGNC</span><span class="p">:</span><span class="n">SUMF1</span><span class="p">)</span> <span class="nb">--</span> <span class="nb">a</span><span class="p">(</span><span class="s">&quot;multiple sulfatase deficiency&quot;</span><span class="p">)</span>
+
+<span class="kc">SET</span> <span class="n">Evidence</span> <span class="o">=</span><span class="s">&quot;behavioral analysis of mice with astrocyte-specific deletion of Sumf1 compared with mice with Sumf1 deletion in both astrocytes</span>
+<span class="s"> and neurons allowed us to link a subset of neurological manifestations of MSD to astrocyte dysfunction.&quot;</span>
+ 
+<span class="nb">a</span><span class="p">(</span><span class="s">&quot;multiple sulfatase deficiency&quot;</span><span class="p">)</span> <span class="nb">--</span> <span class="nb">a</span><span class="p">(</span><span class="s">&quot;astrocyte dysfunction&quot;</span><span class="p">)</span>
+
+<span class="c1">#############################################8########################</span>
+
+<span class="kc">SET</span> <span class="n">Citation</span> <span class="o">=</span> <span class="p">{</span><span class="s">&quot;PubMed&quot;</span><span class="p">,</span><span class="s">&quot;Oxid Med Cell Longev. 2012;2012:624925. doi: 10.1155/2012/624925. Epub 2012 Jul 8.&quot;</span><span class="p">,</span><span class="s">&quot;22829959&quot;</span><span class="p">}</span>
+
+<span class="kc">SET</span> <span class="n">Evidence</span> <span class="o">=</span><span class="s">&quot;There is extensive evidence in Parkinson&#39;s disease of a link between oxidative stress and some of</span>
+<span class="s"> the monogenically inherited Parkinson&#39;s disease-associated genes. &quot;</span>
+
+<span class="nb">bp</span><span class="p">(</span><span class="n">MESHPP</span><span class="p">:</span><span class="s">&quot;Oxidative Stress&quot;</span><span class="p">)</span> <span class="nb">--</span>  <span class="nb">a</span><span class="p">(</span><span class="s">&quot;Parkinson&#39;s disease-associated genes&quot;</span><span class="p">)</span>
+
+<span class="kc">SET</span> <span class="n">Evidence</span> <span class="o">=</span> <span class="s">&quot;This paper focuses on the importance of this link and potential impact on neuronal function.</span>
+<span class="s">Basic mechanisms of oxidative stress, the cellular antioxidant machinery, and the main sources of cellular oxidative stress </span>
+<span class="s">are reviewed. Moreover, attention is given to the complex interaction between oxidative stress and other prominent pathogenic pathways in </span>
+<span class="s">Parkinson&#39;s disease, such as mitochondrial dysfunction and neuroinflammation. &quot;</span>
+
+<span class="nb">bp</span><span class="p">(</span><span class="n">MESHPP</span><span class="p">:</span><span class="s">&quot;Oxidative Stress&quot;</span><span class="p">)</span> <span class="nb">--</span> <span class="nb">path</span><span class="p">(</span><span class="n">ADO</span><span class="p">:</span><span class="s">&quot;neuroinflammation&quot;</span><span class="p">)</span>
+<span class="nb">bp</span><span class="p">(</span><span class="n">MESHPP</span><span class="p">:</span><span class="s">&quot;Oxidative Stress&quot;</span><span class="p">)</span> <span class="nb">--</span> <span class="nb">path</span><span class="p">(</span><span class="n">MESHD</span><span class="p">:</span><span class="s">&quot;Mitochondrial Diseases&quot;</span><span class="p">)</span>
+
+<span class="c1">##########################################9########################</span>
+
+<span class="kc">SET</span> <span class="n">Citation</span> <span class="o">=</span> <span class="p">{</span><span class="s">&quot;PubMed&quot;</span><span class="p">,</span><span class="s">&quot;Exp Neurol. 2012 Oct;237(2):296-303. doi: 10.1016/j.expneurol.2012.07.010. Epub 2012 Jul 24.&quot;</span><span class="p">,</span><span class="s">&quot;22836148&quot;</span><span class="p">}</span>
+
+<span class="kc">SET</span> <span class="n">Evidence</span> <span class="o">=</span> <span class="s">&quot;Multiple sclerosis (MS) causes a variety of motor and sensory deficits and it is also associated with mood disturbances&quot;</span>
+
+<span class="nb">path</span><span class="p">(</span><span class="n">MESHD</span><span class="p">:</span><span class="s">&quot;Multiple Sclerosis&quot;</span><span class="p">)</span> <span class="nb">-&gt;</span> <span class="nb">a</span><span class="p">(</span><span class="s">&quot;Motor deficit&quot;</span><span class="p">)</span>
+<span class="nb">path</span><span class="p">(</span><span class="n">MESHD</span><span class="p">:</span><span class="s">&quot;Multiple Sclerosis&quot;</span><span class="p">)</span> <span class="nb">-&gt;</span> <span class="nb">a</span><span class="p">(</span><span class="s">&quot;Sensory deficit&quot;</span><span class="p">)</span>
+
+<span class="kc">SET</span> <span class="n">Evidence</span> <span class="o">=</span> <span class="s">&quot; First, we observed high anxiety indexes in EAE mice, preceding the appearance of motor defects. Then, we demonstrated</span>
+<span class="s"> that tumor necrosis factor α (TNF-α) has a crucial role in anxiety associated with neuroinflammation. &quot;</span>
+
+<span class="nb">path</span><span class="p">(</span><span class="n">ADO</span><span class="p">:</span><span class="s">&quot;anxiety&quot;</span><span class="p">)</span> <span class="nb">-&gt;</span> <span class="nb">a</span><span class="p">(</span><span class="s">&quot;motor defect&quot;</span><span class="p">)</span>
+<span class="nb">p</span><span class="p">(</span><span class="n">MGI</span><span class="p">:</span><span class="n">Tnf</span><span class="p">)</span> <span class="nb">--</span> <span class="nb">path</span><span class="p">(</span><span class="n">ADO</span><span class="p">:</span><span class="s">&quot;anxiety&quot;</span><span class="p">)</span>
+<span class="nb">path</span><span class="p">(</span><span class="n">ADO</span><span class="p">:</span><span class="s">&quot;anxiety&quot;</span><span class="p">)</span> <span class="nb">--</span> <span class="nb">path</span><span class="p">(</span><span class="n">ADO</span><span class="p">:</span><span class="s">&quot;neuroinflammation&quot;</span><span class="p">)</span>
+
+<span class="c1">###################################10#############################</span>
+
+<span class="kc">SET</span> <span class="n">Citation</span> <span class="o">=</span><span class="p">{</span><span class="s">&quot;PubMed&quot;</span><span class="p">,</span><span class="s">&quot;J Nucl Med. 2012 Sep;53(9):1383-91. doi: 10.2967/jnumed.112.105734. Epub 2012 Jul 31.&quot;</span><span class="p">,</span><span class="s">&quot;22851635&quot;</span><span class="p">}</span>
+<span class="kc">SET</span> <span class="n">Evidence</span> <span class="o">=</span> <span class="s">&quot;Arachidonic acid (AA) is found in high concentrations in brain phospholipids and is released as a second messenger</span>
+<span class="s">during neurotransmission and much more so during neuroinflammation and excitotoxicity.&quot;</span>
+
+<span class="nb">bp</span><span class="p">(</span><span class="n">GOBP</span><span class="p">:</span><span class="s">&quot;chemical synaptic transmission&quot;</span><span class="p">)</span> <span class="nb">-&gt;</span> <span class="nb">a</span><span class="p">(</span><span class="n">CHEBI</span><span class="p">:</span><span class="s">&quot;arachidonic acid&quot;</span><span class="p">)</span>
+<span class="nb">path</span><span class="p">(</span><span class="n">ADO</span><span class="p">:</span><span class="s">&quot;neuroinflammation&quot;</span><span class="p">)</span> <span class="nb">-&gt;</span> <span class="nb">a</span><span class="p">(</span><span class="n">CHEBI</span><span class="p">:</span><span class="s">&quot;arachidonic acid&quot;</span><span class="p">)</span>
+
+<span class="kc">SET</span> <span class="n">Evidence</span> <span class="o">=</span> <span class="s">&quot;Upregulated brain AA metabolism associated with neuroinflammation has been imaged in rodents</span>
+<span class="s"> using [1-(14)C]AA and with PET in Alzheimer disease patients using [1-(11)C]AA.&quot;</span>
+
+<span class="kc">SET</span> <span class="n">Disease</span> <span class="o">=</span><span class="s">&quot;Alzheimer&#39;s disease&quot;</span>
+<span class="nb">a</span><span class="p">(</span><span class="s">&quot;arachidonic acid metabolism&quot;</span><span class="p">)</span> <span class="nb">--</span> <span class="nb">path</span><span class="p">(</span><span class="n">ADO</span><span class="p">:</span><span class="s">&quot;neuroinflammation&quot;</span><span class="p">)</span>
+
+
+<span class="c1">#######################################11############################</span>
+
+<span class="kc">SET</span> <span class="n">Citation</span><span class="o">=</span><span class="p">{</span><span class="s">&quot;PubMed&quot;</span><span class="p">,</span><span class="s">&quot;Gene Ther. 2013 May;20(5):487-96. doi: 10.1038/gt.2012.58. Epub 2012 Aug 2.&quot;</span><span class="p">,</span><span class="s">&quot;22855093&quot;</span><span class="p">}</span>
+
+<span class="kc">SET</span> <span class="n">Evidence</span> <span class="o">=</span> <span class="s">&quot;Interleukin-25 (IL-25) is the only anti-inflammatory cytokine of the IL-17 family,</span>
+<span class="s"> and it has been shown to be efficacious in inhibiting neuroinflammation.&quot;</span>
+
+<span class="kc">SET</span> <span class="n">Species</span><span class="o">=</span> <span class="s">&quot;10090&quot;</span>
+
+<span class="nb">p</span><span class="p">(</span><span class="n">MGI</span><span class="p">:</span><span class="n">Il25</span><span class="p">)</span> <span class="nb">-|</span> <span class="nb">path</span><span class="p">(</span><span class="n">ADO</span><span class="p">:</span><span class="s">&quot;neuroinflammation&quot;</span><span class="p">)</span>
+
+<span class="kc">SET</span> <span class="n">Evidence</span> <span class="o">=</span><span class="s">&quot; In both, we found that IL-25 gene therapy was able to modulate CNS myeloid cells, either infiltrating macrophages or resident microglia,</span>
+<span class="s">towards an anti-inflammatory, tissue-protective phenotype&quot;</span>
+        
+<span class="nb">p</span><span class="p">(</span><span class="n">MGI</span><span class="p">:</span><span class="n">Il25</span><span class="p">)</span> <span class="nb">-&gt;</span> <span class="nb">a</span><span class="p">(</span><span class="s">&quot;alternative activation of microglia&quot;</span><span class="p">)</span>
+
+<span class="c1">##########################################12###########################</span>
+
+<span class="kc">SET</span> <span class="n">Citation</span> <span class="o">=</span> <span class="p">{</span><span class="s">&quot;PubMed&quot;</span><span class="p">,</span><span class="s">&quot;PLoS One. 2012;7(7):e42078. doi: 10.1371/journal.pone.0042078. Epub 2012 Jul 31.&quot;</span><span class="p">,</span><span class="s">&quot;22860058&quot;</span><span class="p">}</span>
+<span class="kc">SET</span> <span class="n">Species</span><span class="o">=</span> <span class="s">&quot;10090&quot;</span>
+
+<span class="kc">SET</span> <span class="n">Evidence</span> <span class="o">=</span> <span class="s">&quot;Molecular hydrogen has been shown to have neuroprotective effects in mouse models of acute neurodegeneration.</span>
+<span class="s"> The effect was suggested to be mediated by its free-radical scavenger properties.&quot;</span>
+ 
+<span class="nb">a</span><span class="p">(</span><span class="n">MESHC</span><span class="p">:</span><span class="s">&quot;Hydrogen&quot;</span><span class="p">)</span> <span class="nb">-|</span> <span class="nb">path</span><span class="p">(</span><span class="n">ADO</span><span class="p">:</span><span class="s">&quot;neuroinflammation&quot;</span><span class="p">)</span>
+ 
+<span class="kc">SET</span> <span class="n">Evidence</span> <span class="o">=</span><span class="s">&quot;However, it has been shown recently that molecular hydrogen alters gene expression and protein phosphorylation.&quot;</span>
+ 
+<span class="nb">a</span><span class="p">(</span><span class="n">MESHC</span><span class="p">:</span><span class="s">&quot;Hydrogen&quot;</span><span class="p">)</span> <span class="nb">--</span> <span class="nb">bp</span><span class="p">(</span><span class="n">GOBP</span><span class="p">:</span><span class="s">&quot;gene expression&quot;</span><span class="p">)</span>
+<span class="nb">a</span><span class="p">(</span><span class="n">MESHC</span><span class="p">:</span><span class="s">&quot;Hydrogen&quot;</span><span class="p">)</span> <span class="nb">--</span> <span class="nb">bp</span><span class="p">(</span><span class="n">MESHPP</span><span class="p">:</span><span class="s">&quot;Phosphorylation&quot;</span><span class="p">)</span>
+
+<span class="kc">SET</span> <span class="n">Evidence</span> <span class="o">=</span> <span class="s">&quot;We found that molecular hydrogen reduces the LPS-induced sickness behaviour and promotes recovery.</span>
+<span class="s">These effects are associated with a shift towards anti-inflammatory gene expression profile at baseline </span>
+<span class="s">(downregulation of TNF- α and upregulation of IL-10). &quot;</span>
+ 
+<span class="nb">a</span><span class="p">(</span><span class="n">MESHC</span><span class="p">:</span><span class="s">&quot;Hydrogen&quot;</span><span class="p">)</span> <span class="nb">-|</span> <span class="nb">a</span><span class="p">(</span><span class="s">&quot;LPS-induced sickness behaviour&quot;</span><span class="p">)</span>
+<span class="nb">a</span><span class="p">(</span><span class="n">MESHC</span><span class="p">:</span><span class="s">&quot;Hydrogen&quot;</span><span class="p">)</span> <span class="nb">-|</span> <span class="nb">p</span><span class="p">(</span><span class="n">MGI</span><span class="p">:</span><span class="n">Tnf</span><span class="p">)</span>
+<span class="nb">a</span><span class="p">(</span><span class="n">MESHC</span><span class="p">:</span><span class="s">&quot;Hydrogen&quot;</span><span class="p">)</span> <span class="nb">-&gt;</span> <span class="nb">p</span><span class="p">(</span><span class="n">MGI</span><span class="p">:</span><span class="n">Il10</span><span class="p">)</span>
+
+<span class="kc">UNSET</span> <span class="n">Species</span>
+<span class="c1">##############################################13#################</span>
+
+<span class="kc">SET</span> <span class="n">Citation</span> <span class="o">=</span> <span class="p">{</span><span class="s">&quot;PubMed&quot;</span><span class="p">,</span><span class="s">&quot;J Vis Exp. 2012 Jul 23;(65). pii: 4097. doi: 10.3791/4097.&quot;</span><span class="p">,</span><span class="s">&quot;22872097&quot;</span><span class="p">}</span>
+
+<span class="kc">SET</span> <span class="n">Evidence</span> <span class="o">=</span> <span class="s">&quot;Microglia in a normal CNS express macrophage marker CD11b and exhibit a resting</span>
+<span class="s">phenotype by expressing low levels of activation markers such as CD45.&quot;</span>
+
+<span class="nb">r</span><span class="p">(</span><span class="n">HGNC</span><span class="p">:</span><span class="n">CDK11B</span><span class="p">)</span>
+<span class="nb">p</span><span class="p">(</span><span class="n">HGNC</span><span class="p">:</span><span class="n">PTPRC</span><span class="p">)</span> <span class="nb">--</span> <span class="nb">p</span><span class="p">(</span><span class="n">HGNC</span><span class="p">:</span><span class="n">CDK11B</span><span class="p">)</span>
+
+<span class="kc">SET</span> <span class="n">Evidence</span> <span class="o">=</span> <span class="s">&quot;MicroRNAs (miRNAs) are a growing family of conserved molecules (~22 nucleotides long)</span>
+<span class="s">that are involved in many normal physiological processes such as cell growth and differentiation(4) and pathologies </span>
+<span class="s">such as inflammation(5).&quot;</span>
+
+<span class="nb">path</span><span class="p">(</span><span class="n">MESHD</span><span class="p">:</span><span class="n">Inflammation</span><span class="p">)</span> <span class="nb">--</span> <span class="nb">bp</span><span class="p">(</span><span class="n">GOBP</span><span class="p">:</span><span class="s">&quot;cell growth&quot;</span><span class="p">)</span>
+
+
+<span class="c1">#####################################14###########################</span>
+
+<span class="kc">SET</span> <span class="n">Citation</span> <span class="o">=</span> <span class="p">{</span><span class="s">&quot;PubMed&quot;</span><span class="p">,</span><span class="s">&quot;Nat Rev Neurol. 2012 Sep;8(9):518-30. doi: 10.1038/nrneurol.2012.156. Epub 2012 Aug 14.&quot;</span><span class="p">,</span><span class="s">&quot;22890216&quot;</span><span class="p">}</span>
+<span class="kc">SET</span> <span class="n">Evidence</span> <span class="o">=</span> <span class="s">&quot;GEP studies have implicated the ubiquitin-proteasome system in PD pathogenesis, and have provided evidence of </span>
+<span class="s">mitochondrial dysfunction in PD and AD.&quot;</span>
+
+<span class="nb">path</span><span class="p">(</span><span class="n">MESHD</span><span class="p">:</span><span class="s">&quot;Parkinson Disease&quot;</span><span class="p">)</span> <span class="nb">--</span> <span class="nb">p</span><span class="p">(</span><span class="n">HGNC</span><span class="p">:</span><span class="n">UBA52</span><span class="p">)</span>
+
+
+<span class="kc">SET</span> <span class="n">Evidence</span> <span class="o">=</span> <span class="s">&quot;Lastly, in AD, a possible role for dysregulation of intracellular signalling pathways, </span>
+<span class="s">including calcium signalling, has been highlighted.&quot;</span>
+
+<span class="nb">a</span><span class="p">(</span><span class="n">SCHEM</span><span class="p">:</span><span class="n">Calcium</span><span class="p">)</span> <span class="nb">--</span> <span class="nb">path</span><span class="p">(</span><span class="n">MESHD</span><span class="p">:</span><span class="s">&quot;Alzheimer Disease&quot;</span><span class="p">)</span>
+
+<span class="c1">###########################################15#########################</span>
+
+<span class="kc">SET</span> <span class="n">Citation</span> <span class="o">=</span> <span class="p">{</span><span class="s">&quot;PubMed&quot;</span><span class="p">,</span><span class="s">&quot;J Neurosci. 2012 Aug 22;32(34):11511-23. doi: 10.1523/JNEUROSCI.0182-12.2012.&quot;</span><span class="p">,</span><span class="s">&quot;22915098&quot;</span><span class="p">}</span>
+
+<span class="kc">SET</span> <span class="n">Evidence</span> <span class="o">=</span> <span class="s">&quot;Nuclear factor κB activation impairs ependymal ciliogenesis and links neuroinflammation to hydrocephalus formation.&quot;</span>
+<span class="nb">path</span><span class="p">(</span><span class="n">MESHD</span><span class="p">:</span><span class="n">Hydrocephalus</span><span class="p">)</span> <span class="nb">--</span> <span class="nb">p</span><span class="p">(</span><span class="n">HGNC</span><span class="p">:</span><span class="n">NFKB1</span><span class="p">)</span>
+
+<span class="kc">SET</span> <span class="n">Evidence</span> <span class="o">=</span> <span class="s">&quot;In this animal model, hydrocephalus formation is specifically induced during a critical time period of early postnatal development,</span>
+<span class="s"> in which IKK/NF-κB-induced neuroinflammation interferes with ependymal ciliogenesis.&quot;</span>
+
+<span class="nb">p</span><span class="p">(</span><span class="n">HGNC</span><span class="p">:</span><span class="n">NFKB1</span><span class="p">)</span> <span class="nb">--</span> <span class="nb">path</span><span class="p">(</span><span class="n">MESHD</span><span class="p">:</span><span class="n">Hydrocephalus</span><span class="p">)</span>  
+
+<span class="kc">SET</span> <span class="n">Evidence</span> <span class="o">=</span> <span class="s">&quot;Therefore, our study might open up new perspectives for the treatment of certain types of neonatal and childhood </span>
+<span class="s">hydrocephalus associated with hemorrhages and infections.&quot;</span>
+
+<span class="nb">path</span><span class="p">(</span><span class="n">MESHD</span><span class="p">:</span><span class="n">Infection</span><span class="p">)</span> <span class="nb">--</span> <span class="nb">path</span><span class="p">(</span><span class="n">MESHD</span><span class="p">:</span><span class="n">Hydrocephalus</span><span class="p">)</span>
+<span class="nb">path</span><span class="p">(</span><span class="n">MESHD</span><span class="p">:</span><span class="n">Hemorrhage</span><span class="p">)</span> <span class="nb">--</span> <span class="nb">path</span><span class="p">(</span><span class="n">MESHD</span><span class="p">:</span><span class="n">Hydrocephalus</span><span class="p">)</span>
+
+
+<span class="kc">UNSET</span> <span class="kc">STATEMENT_GROUP</span>
+
+<span class="c1">##################################################################################</span>
+<span class="c1"># Statements Section</span>
+
+<span class="kc">SET</span> <span class="kc">STATEMENT_GROUP</span> <span class="o">=</span> <span class="s">&quot;Group 2&quot;</span>
+
+<span class="c1"># Add statements below this comment</span>
+<span class="c1">##### paper 1 ###</span>
+
+<span class="kc">SET</span> <span class="n">Citation</span> <span class="o">=</span> <span class="p">{</span><span class="s">&quot;PubMed&quot;</span><span class="p">,</span><span class="s">&quot;Neurotherapeutics. 2013 Jan;10(1):143-53. doi: 10.1007/s13311-012-0165-2.&quot;</span><span class="p">,</span><span class="s">&quot; 23296837&quot;</span><span class="p">}</span>
+
+<span class="kc">SET</span> <span class="n">Evidence</span> <span class="o">=</span> <span class="s">&quot;Consumption of coffee is associated with reduced risk of Parkinson&#39;s disease (PD), an effect that has largely been</span>
+<span class="s"> attributed to caffeine. However, coffee contains numerous components that may also be neuroprotective. One of these compounds is</span>
+<span class="s"> eicosanoyl-5-hydroxytryptamide (EHT), which ameliorates the phenotype of α-synuclein transgenic mice associated with decreased </span>
+<span class="s"> protein aggregation and phosphorylation, improved neuronal integrity and reduced neuroinflammation. The neuroinflammatory </span>
+<span class="s"> response to MPTP was markedly attenuated, and indices of oxidative stress and JNK activation were significantly prevented with </span>
+<span class="s"> EHT&quot;</span>
+
+<span class="nb">a</span><span class="p">(</span><span class="n">CHEBI</span><span class="p">:</span><span class="n">caffeine</span><span class="p">)</span> <span class="nb">--</span> <span class="nb">path</span><span class="p">(</span><span class="n">MESHD</span><span class="p">:</span><span class="s">&quot;Parkinson Disease&quot;</span><span class="p">)</span>
+<span class="kc">SET</span> <span class="n">Species</span> <span class="o">=</span> <span class="s">&quot;9606&quot;</span>
+<span class="nb">a</span><span class="p">(</span><span class="s">&quot;eicosanoyl-5-hydroxytryptamide&quot;</span><span class="p">)</span> <span class="nb">decreases</span>  <span class="nb">bp</span><span class="p">(</span><span class="n">MESHPP</span><span class="p">:</span><span class="s">&quot;Aggregation&quot;</span><span class="p">)</span>
+<span class="nb">a</span><span class="p">(</span><span class="s">&quot;eicosanoyl-5-hydroxytryptamide&quot;</span><span class="p">)</span> <span class="nb">decreases</span>  <span class="nb">bp</span><span class="p">(</span><span class="n">MESHPP</span><span class="p">:</span><span class="s">&quot;Phosphorylation&quot;</span><span class="p">)</span>
+<span class="nb">a</span><span class="p">(</span><span class="s">&quot;eicosanoyl-5-hydroxytryptamide&quot;</span><span class="p">)</span> <span class="nb">decreases</span>  <span class="nb">bp</span><span class="p">(</span><span class="n">ADO</span><span class="p">:</span><span class="s">&quot;neuroinflammation&quot;</span><span class="p">)</span>
+<span class="c1">#improved neuronal integrity?</span>
+<span class="nb">a</span><span class="p">(</span><span class="s">&quot;eicosanoyl-5-hydroxytryptamide&quot;</span><span class="p">)</span> <span class="nb">decreases</span> <span class="nb">bp</span><span class="p">(</span><span class="n">MESHPP</span><span class="p">:</span><span class="s">&quot;Oxidative Stress&quot;</span><span class="p">)</span>
+<span class="nb">a</span><span class="p">(</span><span class="s">&quot;eicosanoyl-5-hydroxytryptamide&quot;</span><span class="p">)</span> <span class="nb">decreases</span> <span class="nb">act</span><span class="p">(</span><span class="nb">p</span><span class="p">(</span><span class="n">HGNC</span><span class="p">:</span><span class="n">MAPK9</span><span class="p">))</span>
+
+<span class="kc">SET</span> <span class="n">Evidence</span> <span class="o">=</span> <span class="s">&quot;Mice fed a diet containing EHT for four weeks exhibited dose-dependent preservation of nigral dopaminergic</span>
+<span class="s"> neurons following MPTP challenge compared to animals given control feed. Reductions in striatal dopamine and tyrosine </span>
+<span class="s"> hydroxylase content were also less pronounced with EHT treatment.&quot;</span>
+
+<span class="kc">SET</span> <span class="n">NervousSystem</span> <span class="o">=</span> <span class="s">&quot;Neostriatum&quot;</span>
+<span class="nb">a</span><span class="p">(</span><span class="s">&quot;eicosanoyl-5-hydroxytryptamide&quot;</span><span class="p">)</span> <span class="nb">increases</span> <span class="nb">a</span><span class="p">(</span><span class="n">CHEBI</span><span class="p">:</span><span class="s">&quot;1-methyl-4-phenyl-1,2,3,6-tetrahydropyridine&quot;</span><span class="p">)</span>
+<span class="nb">a</span><span class="p">(</span><span class="s">&quot;eicosanoyl-5-hydroxytryptamide&quot;</span><span class="p">)</span> <span class="nb">increases</span> <span class="nb">a</span><span class="p">(</span><span class="n">CHEBI</span><span class="p">:</span><span class="n">dopamine</span><span class="p">)</span>
+<span class="nb">a</span><span class="p">(</span><span class="s">&quot;eicosanoyl-5-hydroxytryptamide&quot;</span><span class="p">)</span> <span class="nb">increases</span> <span class="nb">a</span><span class="p">(</span><span class="n">MGI</span><span class="p">:</span><span class="n">Th</span><span class="p">)</span>
+<span class="kc">UNSET</span> <span class="n">NervousSystem</span>
+<span class="kc">UNSET</span> <span class="n">Species</span>
+
+<span class="kc">SET</span> <span class="n">Evidence</span> <span class="o">=</span> <span class="s">&quot;In cultured primary microglia and astrocytes, EHT had a direct anti-inflammatory effect demonstrated by </span>
+<span class="s">repression of lipopolysaccharide-induced NFκB activation, iNOS induction, and nitric oxide production.&quot;</span>
+<span class="kc">SET</span> <span class="n">NervousSystem</span> <span class="o">=</span> <span class="p">{</span><span class="s">&quot;Microglia&quot;</span><span class="p">,</span><span class="s">&quot;Astrocytes&quot;</span><span class="p">}</span>
+<span class="nb">a</span><span class="p">(</span><span class="s">&quot;eicosanoyl-5-hydroxytryptamide&quot;</span><span class="p">)</span> <span class="nb">decreases</span> <span class="nb">act</span><span class="p">(</span><span class="nb">p</span><span class="p">(</span><span class="n">HGNC</span><span class="p">:</span><span class="n">LITAF</span><span class="p">))</span>
+<span class="nb">a</span><span class="p">(</span><span class="s">&quot;eicosanoyl-5-hydroxytryptamide&quot;</span><span class="p">)</span> <span class="nb">decreases</span> <span class="nb">a</span><span class="p">(</span><span class="s">&quot;iNOS&quot;</span><span class="p">)</span>
+<span class="nb">a</span><span class="p">(</span><span class="s">&quot;eicosanoyl-5-hydroxytryptamide&quot;</span><span class="p">)</span> <span class="nb">decreases</span> <span class="nb">a</span><span class="p">(</span><span class="n">CHEBI</span><span class="p">:</span><span class="s">&quot;nitric oxide&quot;</span><span class="p">)</span>
+<span class="c1">#couldnt find iNOS enzyme. ASk</span>
+
+<span class="kc">UNSET</span> <span class="n">NervousSystem</span> 
+
+<span class="c1"># bel statement</span>
+<span class="kc">SET</span> <span class="n">Evidence</span> <span class="o">=</span> <span class="s">&quot;Additionally, in SH-SY5Y cells, MPP(+)-induced demethylation of phosphoprotein phosphatase 2A (PP2A), the master </span>
+<span class="s"> regulator of the cellular phosphoregulatory network, and cytotoxicity were ameliorated by EHT. &quot;</span>
+ <span class="nb">a</span><span class="p">(</span><span class="s">&quot;eicosanoyl-5-hydroxytryptamide&quot;</span><span class="p">)</span> <span class="nb">decreases</span> <span class="nb">g</span><span class="p">(</span><span class="n">MGI</span><span class="p">:</span><span class="n">Mpz</span><span class="p">)</span>
+ 
+<span class="c1">#check where MPP is</span>
+<span class="c1">############### paper 2 $$</span>
+
+
+<span class="kc">SET</span> <span class="n">Citation</span> <span class="o">=</span> <span class="p">{</span><span class="s">&quot;PubMed&quot;</span><span class="p">,</span><span class="s">&quot;Anesthesiology. 2013 Mar;118(3):502-15. doi: 10.1097/ALN.0b013e3182834d77.&quot;</span><span class="p">,</span><span class="s">&quot;23314110&quot;</span><span class="p">}</span>
+<span class="kc">SET</span> <span class="n">Evidence</span> <span class="o">=</span> <span class="s">&quot; anesthesia with 3% sevoflurane for 2 h daily for 3 days induced cognitive impairment and neuroinflammation</span>
+<span class="s"> (e.g., increased interleukin-6 levels, 151 ± 2.3% [mean ± SD] vs. 100 ± 9.0%, P = 0.035, n = 6) in young but not in adult mice&quot;</span>
+<span class="c1">#how to diff between young and old mice</span>
+<span class="kc">SET</span> <span class="n">Species</span> <span class="o">=</span> <span class="s">&quot;9606&quot;</span>
+<span class="nb">a</span><span class="p">(</span><span class="n">CHEBI</span><span class="p">:</span><span class="n">sevoflurane</span><span class="p">)</span> <span class="nb">--</span> <span class="nb">path</span><span class="p">(</span><span class="n">ADO</span><span class="p">:</span><span class="s">&quot;neuroinflammation&quot;</span><span class="p">)</span>
+<span class="nb">a</span><span class="p">(</span><span class="n">CHEBI</span><span class="p">:</span><span class="n">sevoflurane</span><span class="p">)</span> <span class="nb">--</span> <span class="nb">bp</span><span class="p">(</span><span class="n">ADO</span><span class="p">:</span><span class="s">&quot;Mild_cognitive_impairment&quot;</span><span class="p">)</span>
+
+<span class="nb">a</span><span class="p">(</span><span class="n">CHEBI</span><span class="p">:</span><span class="n">sevoflurane</span><span class="p">)</span> <span class="nb">-&gt;</span> <span class="nb">p</span><span class="p">(</span><span class="n">MGI</span><span class="p">:</span><span class="n">Il6</span><span class="p">)</span>
+
+<span class="kc">SET</span> <span class="n">Evidence</span> <span class="o">=</span> <span class="s">&quot; Anesthesia with 3% sevoflurane for 2 h daily for 1 day and 9% desflurane for 2 h daily for 3 days induced </span>
+<span class="s">neither cognitive impairment nor neuroinflammation&quot;</span>
+<span class="nb">a</span><span class="p">(</span><span class="n">CHEBI</span><span class="p">:</span><span class="n">desflurane</span><span class="p">)</span> <span class="nb">decreases</span> <span class="nb">path</span><span class="p">(</span><span class="n">ADO</span><span class="p">:</span><span class="s">&quot;neuroinflammation&quot;</span><span class="p">)</span>
+<span class="nb">a</span><span class="p">(</span><span class="n">CHEBI</span><span class="p">:</span><span class="n">desflurane</span><span class="p">)</span> <span class="nb">decreases</span> <span class="nb">path</span><span class="p">(</span><span class="n">ADO</span><span class="p">:</span><span class="s">&quot;Mild_cognitive_impairment&quot;</span><span class="p">)</span>
+<span class="nb">p</span><span class="p">(</span><span class="n">MGI</span><span class="p">:</span><span class="n">Il6</span><span class="p">)</span> <span class="nb">--</span> <span class="nb">a</span><span class="p">(</span><span class="n">CHEBI</span><span class="p">:</span><span class="n">sevoflurane</span><span class="p">)</span>
+<span class="kc">UNSET</span> <span class="n">Species</span>
+<span class="c1">####################paper 3 $$</span>
+
+
+<span class="kc">SET</span> <span class="n">Citation</span> <span class="o">=</span> <span class="p">{</span><span class="s">&quot;PubMed&quot;</span><span class="p">,</span><span class="s">&quot;Anesthesiology. 2013 Mar;118(3):502-15. doi: 10.1097/ALN.0b013e3182834d77.&quot;</span><span class="p">,</span><span class="s">&quot;24890099&quot;</span><span class="p">}</span>
+<span class="kc">SET</span> <span class="n">Evidence</span> <span class="o">=</span> <span class="s">&quot;Using a model of chronic neuroinflammation following murine cytomegalovirus (MCMV)-induced encephalitis, we found</span>
+<span class="s">that CD8(+) T-cells persisting within the brain expressed PD-1. Conversely, activated microglia expressed PD-L1. &quot;</span>
+<span class="nb">complex</span><span class="p">(</span><span class="nb">p</span><span class="p">(</span><span class="n">HGNC</span><span class="p">:</span><span class="n">CD274</span><span class="p">),</span><span class="nb">p</span><span class="p">(</span><span class="n">HGNC</span><span class="p">:</span><span class="n">SPATA2</span><span class="p">))</span>
+ 
+<span class="kc">SET</span> <span class="n">Evidence</span> <span class="o">=</span> <span class="s">&quot;PD-L1 on microglia has been shown to negatively regulate T-cell activation in models of multiple sclerosis and acute viral encephalitis.&quot;</span>
+<span class="kc">SET</span> <span class="n">MeSHAnatomy</span> <span class="o">=</span> <span class="s">&quot;Microglia&quot;</span>
+<span class="nb">bp</span><span class="p">(</span><span class="n">GOBP</span><span class="p">:</span><span class="s">&quot;T cell activation&quot;</span><span class="p">)</span> <span class="nb">--</span> <span class="nb">p</span><span class="p">(</span><span class="n">HGNC</span><span class="p">:</span><span class="n">CD274</span><span class="p">)</span> 
+<span class="kc">UNSET</span> <span class="n">MeSHAnatomy</span> 
+
+<span class="kc">SET</span> <span class="n">Evidence</span> <span class="o">=</span> <span class="s">&quot;PD-L1 on microglia has been shown to negatively regulate T-cell activation in models of multiple sclerosis and acute viral encephalitis&quot;</span>
+<span class="kc">SET</span> <span class="n">MeSHAnatomy</span> <span class="o">=</span> <span class="s">&quot;Microglia&quot;</span>
+<span class="nb">path</span><span class="p">(</span><span class="n">MESHD</span><span class="p">:</span><span class="s">&quot;Multiple Sclerosis&quot;</span><span class="p">)</span> <span class="nb">--</span> <span class="nb">p</span><span class="p">(</span><span class="n">HGNC</span><span class="p">:</span><span class="n">CD274</span><span class="p">)</span>
+<span class="kc">UNSET</span> <span class="n">MeSHAnatomy</span>
+
+<span class="kc">SET</span> <span class="n">Evidence</span> <span class="o">=</span> <span class="s">&quot;In vitro, primary murine microglia, which express low basal levels of PD-L1, upregulated the co-inhibitory ligand on IFN-γ-treatment.&quot;</span>
+<span class="nb">p</span><span class="p">(</span><span class="n">HGNC</span><span class="p">:</span><span class="n">IFNG</span><span class="p">)</span> <span class="nb">--</span> <span class="nb">p</span><span class="p">(</span><span class="n">HGNC</span><span class="p">:</span><span class="n">CD274</span><span class="p">)</span>
+
+<span class="kc">SET</span> <span class="n">Evidence</span> <span class="o">=</span> <span class="s">&quot;Blockade of the PD-1: PD-L1 pathway in microglial: CD8(+) T-cell co-cultures increased T-cell IFN-γ and interleukin (IL)-2 production.&quot;</span>
+<span class="nb">p</span><span class="p">(</span><span class="n">HGNC</span><span class="p">:</span><span class="n">IFNG</span><span class="p">)</span> <span class="nb">--</span> <span class="nb">p</span><span class="p">(</span><span class="n">HGNC</span><span class="p">:</span><span class="n">CD274</span><span class="p">)</span>
+<span class="nb">p</span><span class="p">(</span><span class="n">HGNC</span><span class="p">:</span><span class="n">IL2</span><span class="p">)</span> <span class="nb">--</span> <span class="nb">p</span><span class="p">(</span><span class="n">HGNC</span><span class="p">:</span><span class="n">IFNG</span><span class="p">)</span>
+<span class="c1">#PD-L1 is HGNC:CD274</span>
+
+<span class="kc">SET</span> <span class="n">Evidence</span> <span class="o">=</span> <span class="s">&quot;Using ex vivo cultures of brain leukocytes, including microglia and CD8(+) T-cells, obtained from mice with MCMV-induced chronic </span>
+<span class="s">neuroinflammation, we found that neutralization of either PD-1 or PD-L1 increased IFN-γ production from virus-specific CD8(+) T-cells stimulated with</span>
+<span class="s"> MCMV IE1168-176 peptide.&quot;</span>
+
+<span class="nb">p</span><span class="p">(</span><span class="n">HGNC</span><span class="p">:</span><span class="n">IFNG</span><span class="p">)</span> <span class="nb">--</span> <span class="nb">p</span><span class="p">(</span><span class="n">HGNC</span><span class="p">:</span><span class="n">CD274</span><span class="p">)</span>
+
+<span class="c1">############paper4 : 24898638 ## $$$</span>
+
+<span class="kc">SET</span> <span class="n">Citation</span> <span class="o">=</span> <span class="p">{</span><span class="s">&quot;PubMed&quot;</span><span class="p">,</span><span class="s">&quot;J Alzheimers Dis. 2014;42(2):421-33. doi: 10.3233/JAD-132165&quot;</span><span class="p">,</span><span class="s">&quot;24898638 &quot;</span><span class="p">}</span>
+
+<span class="kc">SET</span> <span class="n">Evidence</span> <span class="o">=</span> <span class="s">&quot;Metabolomic analyses of both whole blood and plasma showed a clear separation between untreated AL mice and the</span>
+<span class="s">other two groups, with levels of several metabolites involved in energy metabolism, including pyruvate and creatine, being </span>
+<span class="s">significantly reduced in untreated AL mice compared with control and treated AL mice.&quot;</span>
+<span class="kc">SET</span> <span class="n">Species</span> <span class="o">=</span> <span class="s">&quot;10090&quot;</span>
+
+<span class="nb">a</span><span class="p">(</span><span class="n">CHEBI</span><span class="p">:</span><span class="s">&quot;beta-amyloid&quot;</span><span class="p">)</span> <span class="nb">increases</span> <span class="nb">a</span><span class="p">(</span><span class="n">pyruvate</span><span class="p">)</span>
+<span class="nb">a</span><span class="p">(</span><span class="n">CHEBI</span><span class="p">:</span><span class="s">&quot;beta-amyloid&quot;</span><span class="p">)</span> <span class="nb">increases</span> <span class="nb">a</span><span class="p">(</span><span class="n">creatine</span><span class="p">)</span>
+
+<span class="kc">SET</span> <span class="n">Evidence</span>  <span class="o">=</span> <span class="s">&quot;Gallate treatment suppressed Aβ-induced overproduction of the inflammatory cytokine tumor necrosis factor-α in the hippocampus and </span>
+<span class="s">normalized plasma levels of the affected metabolites.&quot;</span>
+<span class="kc">SET</span> <span class="n">MeSHAnatomy</span> <span class="o">=</span> <span class="s">&quot;Hippocampus&quot;</span>
+<span class="nb">a</span><span class="p">(</span><span class="n">CHEBI</span><span class="p">:</span><span class="n">gallate</span><span class="p">)</span> <span class="nb">-|</span> <span class="nb">p</span><span class="p">(</span><span class="n">MGI</span><span class="p">:</span><span class="n">Tnf</span><span class="p">)</span>
+<span class="nb">a</span><span class="p">(</span><span class="n">CHEBI</span><span class="p">:</span><span class="n">gallate</span><span class="p">)</span> <span class="nb">decreases</span> <span class="nb">act</span><span class="p">(</span><span class="nb">a</span><span class="p">(</span><span class="n">CHEBI</span><span class="p">:</span><span class="s">&quot;beta-amyloid&quot;</span><span class="p">))</span>
+<span class="c1">#a(CHEBI:gallate) -- p(MGI:App)</span>
+<span class="kc">UNSET</span> <span class="n">MeSHAnatomy</span>
+<span class="kc">UNSET</span> <span class="n">Species</span>
+
+
+<span class="c1">########## paper 5 : 24898660### $</span>
+
+<span class="kc">SET</span> <span class="n">Citation</span> <span class="o">=</span> <span class="p">{</span><span class="s">&quot;PubMed&quot;</span><span class="p">,</span><span class="s">&quot;J Alzheimers Dis. 2014;42(2):459-83. doi: 10.3233/JAD-140036.&quot;</span><span class="p">,</span><span class="s">&quot;24898660&quot;</span><span class="p">}</span>
+
+<span class="kc">SET</span> <span class="n">Evidence</span> <span class="o">=</span> <span class="s">&quot;The p75 neurotrophin receptor (p75NTR) is involved in degenerative mechanisms related to Alzheimer&#39;s disease (AD).</span>
+<span class="s"> In addition, p75NTR levels are increased in AD and the receptor is expressed by neurons that are particularly vulnerable in the</span>
+<span class="s"> disease. Therefore, modulating p75NTR function may be a significant disease-modifying treatment approach&quot;</span>
+
+<span class="kc">SET</span> <span class="n">Species</span> <span class="o">=</span> <span class="s">&quot;10090&quot;</span>
+<span class="nb">path</span><span class="p">(</span><span class="n">DO</span><span class="p">:</span><span class="s">&quot;Alzheimer&#39;s disease&quot;</span><span class="p">)</span> <span class="nb">-&gt;</span> <span class="nb">p</span><span class="p">(</span><span class="n">MGI</span><span class="p">:</span><span class="n">Ngfr</span><span class="p">)</span>
+
+<span class="kc">SET</span> <span class="n">Evidence</span> <span class="o">=</span> <span class="s">&quot;Prior studies indicated that the non-peptide, small molecule p75NTR ligands LM11A-31, and chemically unrelated</span>
+<span class="s"> LM11A-24, could block amyloid-β-induced deleterious signaling and neurodegeneration in vitro, and LM11A-31 was found to mitigate</span>
+<span class="s"> neuritic degeneration and behavioral deficits in a mouse model of AD&quot;</span>
+ 
+<span class="nb">a</span><span class="p">(</span><span class="s">&quot;LM11A-24&quot;</span><span class="p">)</span> <span class="nb">decreases</span> <span class="nb">act</span><span class="p">(</span><span class="nb">a</span><span class="p">(</span><span class="n">CHEBI</span><span class="p">:</span><span class="s">&quot;beta-amyloid&quot;</span><span class="p">))</span>
+<span class="nb">a</span><span class="p">(</span><span class="s">&quot;LM11A-31&quot;</span><span class="p">)</span> <span class="nb">decreases</span> <span class="nb">act</span><span class="p">(</span><span class="nb">a</span><span class="p">(</span><span class="n">CHEBI</span><span class="p">:</span><span class="s">&quot;beta-amyloid&quot;</span><span class="p">))</span>
+<span class="nb">a</span><span class="p">(</span><span class="s">&quot;LM11A-31&quot;</span><span class="p">)</span> <span class="nb">decreases</span> <span class="nb">path</span><span class="p">(</span><span class="n">DO</span><span class="p">:</span><span class="s">&quot;neurodegenerative disease&quot;</span><span class="p">)</span> 
+<span class="nb">path</span><span class="p">(</span><span class="n">MESHD</span><span class="p">:</span><span class="s">&quot;Alzheimer Disease&quot;</span><span class="p">)</span> <span class="nb">--</span> <span class="nb">g</span><span class="p">(</span><span class="n">MGI</span><span class="p">:</span><span class="n">Ngfr</span><span class="p">)</span>
+<span class="nb">path</span><span class="p">(</span><span class="n">MESHD</span><span class="p">:</span><span class="s">&quot;Alzheimer Disease&quot;</span><span class="p">)</span> <span class="nb">--</span> <span class="nb">g</span><span class="p">(</span><span class="n">MGI</span><span class="p">:</span><span class="n">App</span><span class="p">)</span>
+ 
+<span class="kc">SET</span> <span class="n">Evidence</span> <span class="o">=</span> <span class="s">&quot; Both ligands decreased activation of microglia, while LM11A-31 attenuated reactive astrocytes&quot;</span>
+ 
+<span class="kc">SET</span> <span class="n">Cell</span> <span class="o">=</span> <span class="s">&quot;microglial cell&quot;</span>
+<span class="nb">a</span><span class="p">(</span><span class="s">&quot;LM11A-24&quot;</span><span class="p">)</span> <span class="nb">decreases</span> <span class="nb">bp</span><span class="p">(</span><span class="n">ADO</span><span class="p">:</span><span class="s">&quot;Microglial_activation&quot;</span><span class="p">)</span>
+<span class="nb">a</span><span class="p">(</span><span class="s">&quot;LM11A-31&quot;</span><span class="p">)</span> <span class="nb">decreases</span> <span class="nb">bp</span><span class="p">(</span><span class="n">ADO</span><span class="p">:</span><span class="s">&quot;Microglial_activation&quot;</span><span class="p">)</span>
+<span class="kc">UNSET</span> <span class="n">CellLine</span> 
+<span class="kc">UNSET</span> <span class="n">Species</span> 
+
+<span class="c1">####### paper 6 : 24907647 #####$$$</span>
+
+ 
+ <span class="kc">SET</span> <span class="n">Citation</span> <span class="o">=</span> <span class="p">{</span><span class="s">&quot;PubMed&quot;</span><span class="p">,</span><span class="s">&quot;Toxicol In Vitro. 2014 Oct;28(7):1183-9. doi: 10.1016/j.tiv.2014.05.006. Epub 2014 Jun 4.&quot;</span><span class="p">,</span><span class="s">&quot;24907647&quot;</span><span class="p">}</span>
+ 
+ <span class="kc">SET</span> <span class="n">Evidence</span> <span class="o">=</span> <span class="s">&quot;2-Deoxy-d-glucose attenuates sevoflurane-induced neuroinflammation through nuclear factor-kappa B pathway in vitro.&quot;</span>
+ <span class="nb">p</span><span class="p">(</span><span class="n">MGI</span><span class="p">:</span><span class="n">Nfkb1</span><span class="p">)</span> <span class="nb">--</span> <span class="nb">a</span><span class="p">(</span><span class="n">CHEBI</span><span class="p">:</span><span class="s">&quot;2-deoxy-D-glucose&quot;</span><span class="p">)</span>
+ 
+<span class="kc">SET</span> <span class="n">Evidence</span> <span class="o">=</span> <span class="s">&quot; Mouse microglia cells were treated with 4.1% sevoflurane for 6h to examine the expression of interleukin (IL)-6 and tumor necrosis </span>
+<span class="s">factor (TNF-α) and activation of nuclear factor-kappa B (NF-κB). Pyrrolidine dithiocarbamate (PDTC) or 2-DG was used 1h before sevoflurane treatment.&quot;</span>
+ 
+ <span class="kc">SET</span> <span class="n">Species</span> <span class="o">=</span> <span class="s">&quot;10090&quot;</span> 
+ <span class="kc">SET</span> <span class="n">Cell</span> <span class="o">=</span> <span class="s">&quot;microglial cell&quot;</span>
+<span class="nb">a</span><span class="p">(</span><span class="n">CHEBI</span><span class="p">:</span><span class="n">sevoflurane</span><span class="p">)</span> <span class="nb">increases</span> <span class="nb">r</span><span class="p">(</span><span class="n">MGI</span><span class="p">:</span><span class="n">Il6</span><span class="p">)</span>
+<span class="nb">a</span><span class="p">(</span><span class="n">CHEBI</span><span class="p">:</span><span class="n">sevoflurane</span><span class="p">)</span> <span class="nb">increases</span> <span class="nb">r</span><span class="p">(</span><span class="n">MGI</span><span class="p">:</span> <span class="n">Tnf</span><span class="p">)</span>
+<span class="nb">a</span><span class="p">(</span><span class="n">CHEBI</span><span class="p">:</span><span class="n">sevoflurane</span><span class="p">)</span> <span class="nb">increases</span> <span class="nb">act</span><span class="p">(</span><span class="nb">p</span><span class="p">(</span><span class="n">MGI</span><span class="p">:</span><span class="n">Nfkb1</span><span class="p">))</span>
+ 
+<span class="nb">a</span><span class="p">(</span><span class="n">CHEBI</span><span class="p">:</span><span class="s">&quot;2-deoxy-D-glucose&quot;</span><span class="p">)</span> <span class="nb">decreases</span> <span class="nb">p</span><span class="p">(</span><span class="n">MGI</span><span class="p">:</span><span class="n">Il6</span><span class="p">)</span>
+<span class="nb">a</span><span class="p">(</span><span class="n">CHEBI</span><span class="p">:</span><span class="s">&quot;2-deoxy-D-glucose&quot;</span><span class="p">)</span> <span class="nb">decreases</span> <span class="nb">p</span><span class="p">(</span><span class="n">MGI</span><span class="p">:</span> <span class="n">Tnf</span><span class="p">)</span>
+<span class="nb">a</span><span class="p">(</span><span class="n">CHEBI</span><span class="p">:</span><span class="s">&quot;2-deoxy-D-glucose&quot;</span><span class="p">)</span> <span class="nb">decreases</span> <span class="nb">p</span><span class="p">(</span><span class="n">MGI</span><span class="p">:</span> <span class="n">Nfkb1</span><span class="p">)</span>
+ 
+<span class="kc">UNSET</span> <span class="n">Species</span>
+
+<span class="c1">####### paper 7 : 24920309 ######$</span>
+
+ <span class="kc">SET</span> <span class="n">Citation</span> <span class="o">=</span> <span class="p">{</span><span class="s">&quot;PubMed&quot;</span><span class="p">,</span><span class="s">&quot;J Neuroinflammation. 2014 Jun 11;11:104. doi: 10.1186/1742-2094-11-104&quot;</span><span class="p">,</span><span class="s">&quot;24920309&quot;</span><span class="p">}</span>
+ <span class="kc">SET</span> <span class="n">Evidence</span> <span class="o">=</span> <span class="s">&quot;Early passage human brain cell cultures were a mixture of microglia, astrocytes, fibroblasts and pericytes.</span>
+<span class="s"> Later passage cultures contained proliferating fibroblasts and pericytes only. Under basal culture conditions all cell types </span>
+<span class="s">showed cytoplasmic NFκB indicating that they were in a non-activated state. Expression of IP-10 and MCP-1 were significantly </span>
+<span class="s">increased in response to pro-inflammatory stimuli. The two chemokines were expressed in mixed cultures as well as cultures of</span>
+<span class="s"> fibroblasts and pericytes only. The expression of IP-10 and MCP-1 were regulated at the mRNA and protein level, and both were </span>
+<span class="s">secreted into cell culture media. &quot;</span>
+<span class="kc">SET</span> <span class="n">Species</span> <span class="o">=</span> <span class="s">&quot;9606&quot;</span>
+<span class="kc">SET</span> <span class="n">MeSHDisease</span> <span class="o">=</span> <span class="s">&quot;Epilepsy&quot;</span>
+<span class="kc">SET</span> <span class="n">Cell</span> <span class="o">=</span> <span class="p">{</span><span class="s">&quot;microglial cell&quot;</span><span class="p">,</span><span class="s">&quot;astrocyte&quot;</span><span class="p">,</span><span class="s">&quot;fibroblast&quot;</span><span class="p">,</span><span class="s">&quot;pericyte cell&quot;</span><span class="p">}</span>
+<span class="nb">p</span><span class="p">(</span><span class="n">HGNC</span><span class="p">:</span><span class="n">CXCL10</span><span class="p">)</span> <span class="nb">--</span> <span class="nb">path</span><span class="p">(</span><span class="n">MESHD</span><span class="p">:</span><span class="n">Inflammation</span><span class="p">)</span>
+<span class="nb">p</span><span class="p">(</span><span class="n">HGNC</span><span class="p">:</span><span class="n">CCL2</span><span class="p">)</span> <span class="nb">--</span> <span class="nb">path</span><span class="p">(</span><span class="n">MESHD</span><span class="p">:</span><span class="n">Inflammation</span><span class="p">)</span>
+<span class="kc">UNSET</span> <span class="n">Cell</span>
+<span class="kc">UNSET</span> <span class="n">MeSHDisease</span> 
+<span class="kc">UNSET</span> <span class="n">Species</span>
+<span class="c1">#tloc(nuclear,p(HGNC:NFKB1))</span>
+    
+<span class="c1">###### paper 8 : 24928797 #######</span>
+  
+<span class="kc">SET</span> <span class="n">Citation</span> <span class="o">=</span> <span class="p">{</span><span class="s">&quot;PubMed&quot;</span><span class="p">,</span><span class="s">&quot;Nat Med. 2010 Aug;16(8):897-902. doi: 10.1038/nm.2183. Epub 2010 Jul 25.&quot;</span><span class="p">,</span><span class="s">&quot;24928797&quot;</span><span class="p">}</span>
+
+<span class="kc">SET</span> <span class="n">Evidence</span> <span class="o">=</span> <span class="s">&quot;Multiple system atrophy (MSA) is a sporadic, adult onset, relentlessly progressive neurodegenerative disease characterized by </span>
+<span class="s">autonomic abnormalities associated with parkinsonism, cerebellar dysfunction, pyramidal signs, or combinations thereof.&quot;</span>
+<span class="kc">SET</span> <span class="n">Species</span> <span class="o">=</span> <span class="s">&quot;10090&quot;</span> 
+<span class="nb">path</span><span class="p">(</span><span class="n">MESHD</span><span class="p">:</span><span class="s">&quot;Parkinsonian Disorders&quot;</span><span class="p">)</span> <span class="nb">--</span> <span class="nb">path</span><span class="p">(</span><span class="n">MESHD</span><span class="p">:</span><span class="s">&quot;Multiple System Atrophy&quot;</span><span class="p">)</span>
+<span class="nb">path</span><span class="p">(</span><span class="n">MESHD</span><span class="p">:</span><span class="s">&quot;Cerebellar Diseases&quot;</span><span class="p">)</span> <span class="nb">--</span> <span class="nb">path</span><span class="p">(</span><span class="n">MESHD</span><span class="p">:</span><span class="s">&quot;Multiple System Atrophy&quot;</span><span class="p">)</span>
+<span class="nb">path</span><span class="p">(</span><span class="n">MESHD</span><span class="p">:</span><span class="s">&quot;Multiple System Atrophy&quot;</span><span class="p">)</span> <span class="nb">--</span> <span class="nb">path</span><span class="p">(</span><span class="n">MESHD</span><span class="p">:</span><span class="s">&quot;Neurodegenerative Diseases&quot;</span><span class="p">)</span>
+
+<span class="kc">SET</span> <span class="n">Evidence</span> <span class="o">=</span> <span class="s">&quot;MSA is neuropathologically defined by the presence of α-synuclein-containing inclusions, particularly in the cytoplasm of </span>
+<span class="s">oligodendrocytes (glial cytoplasmic inclusions, GCIs), which are associated with neurodegeneration.&quot;</span>
+<span class="nb">p</span><span class="p">(</span><span class="n">MGI</span><span class="p">:</span><span class="n">Snca</span><span class="p">)</span> <span class="nb">--</span> <span class="nb">path</span><span class="p">(</span><span class="n">MESHD</span><span class="p">:</span><span class="s">&quot;Multiple System Atrophy&quot;</span><span class="p">)</span>
+
+<span class="kc">SET</span> <span class="n">Evidence</span> <span class="o">=</span> <span class="s">&quot;The MSA neurodegenerative process likely comprises cell-to-cell transmission of α-synuclein in a prion-like manner, α-synuclein</span>
+<span class="s"> aggregation, increased oxidative stress, abnormal expression of tubulin proteins, decreased expression of neurotrophic factors, excitotoxicity and</span>
+<span class="s"> microglial activation, and neuroinflammation.&quot;</span>
+<span class="nb">path</span><span class="p">(</span><span class="n">MESHD</span><span class="p">:</span><span class="s">&quot;Multiple System Atrophy&quot;</span><span class="p">)</span> <span class="nb">-&gt;</span> <span class="nb">bp</span><span class="p">(</span><span class="n">MESHPP</span><span class="p">:</span><span class="s">&quot;Oxidative Stress&quot;</span><span class="p">)</span>
+<span class="nb">path</span><span class="p">(</span><span class="n">MESHD</span><span class="p">:</span><span class="s">&quot;Multiple System Atrophy&quot;</span><span class="p">)</span> <span class="nb">-|</span> <span class="nb">r</span><span class="p">(</span><span class="n">MGI</span><span class="p">:</span><span class="n">Ntf3</span><span class="p">)</span>
+
+<span class="kc">SET</span> <span class="n">Evidence</span> <span class="o">=</span> <span class="s">&quot;These include sertraline, paroxetine, and lithium, which hamper arrival of α-synuclein to oligodendroglia; rifampicin, lithium,</span>
+<span class="s">and non-steroidal anti-inflammatory drugs, which inhibit α-synuclein aggregation in oligodendrocytes; riluzole, rasagiline, fluoxetine and mesenchymal</span>
+<span class="s">stem cells, which exert neuroprotective actions; and minocycline and intravenous immunoglobulins, which reduce neuroinflammation and microglial </span>
+<span class="s">activation&quot;</span>
+<span class="kc">SET</span> <span class="n">MeSHAnatomy</span> <span class="o">=</span> <span class="s">&quot;Oligodendroglia&quot;</span>
+<span class="nb">a</span><span class="p">(</span><span class="n">CHEBI</span><span class="p">:</span><span class="s">&quot;lithium atom&quot;</span><span class="p">)</span> <span class="nb">-|</span> <span class="nb">r</span><span class="p">(</span><span class="n">MGI</span><span class="p">:</span><span class="n">Snca</span><span class="p">)</span>
+<span class="nb">a</span><span class="p">(</span><span class="n">CHEBI</span><span class="p">:</span><span class="n">sertraline</span><span class="p">)</span> <span class="nb">-|</span> <span class="nb">r</span><span class="p">(</span><span class="n">MGI</span><span class="p">:</span><span class="n">Snca</span><span class="p">)</span>
+<span class="nb">a</span><span class="p">(</span><span class="n">CHEBI</span><span class="p">:</span><span class="n">paroxetine</span><span class="p">)</span> <span class="nb">-|</span> <span class="nb">r</span><span class="p">(</span><span class="n">MGI</span><span class="p">:</span><span class="n">Snca</span><span class="p">)</span>
+
+<span class="kc">UNSET</span> <span class="n">MeSHAnatomy</span>
+<span class="kc">UNSET</span> <span class="n">Species</span> 
+
+<span class="c1">####### paper 9 : 24990149##### in process </span>
+
+<span class="kc">SET</span> <span class="n">Citation</span> <span class="o">=</span> <span class="p">{</span><span class="s">&quot;PubMed&quot;</span><span class="p">,</span><span class="s">&quot;Hum Mol Genet. 2014 Dec 1;23(23):6286-301. doi: 10.1093/hmg/ddu348. Epub 2014 Jul 2.&quot;</span><span class="p">,</span><span class="s">&quot;24990149&quot;</span><span class="p">}</span>
+<span class="kc">SET</span> <span class="n">Species</span> <span class="o">=</span> <span class="s">&quot;10090&quot;</span>
+<span class="kc">SET</span> <span class="n">Evidence</span> <span class="o">=</span> <span class="s">&quot;The role of inflammatory miRNAs in Alzheimer&#39;s disease (AD) and their ability to modulate glia responses are now </span>
+<span class="s">beginning to be explored.&quot;</span> 
+<span class="kc">SET</span> <span class="n">Species</span> <span class="o">=</span> <span class="s">&quot;10090&quot;</span>
+<span class="nb">a</span><span class="p">(</span><span class="s">&quot;inflammatory miRNAs&quot;</span><span class="p">)</span> <span class="nb">--</span> <span class="nb">path</span><span class="p">(</span><span class="n">DO</span><span class="p">:</span><span class="s">&quot;Alzheimer&#39;s disease&quot;</span><span class="p">)</span>
+
+<span class="kc">SET</span> <span class="n">Evidence</span> <span class="o">=</span> <span class="s">&quot;In this study, we propose to disclose the functional role of miR-155, one of the most well studied immune-related miRNAs in AD-associated neuroinflammatory events, employing the 3xTg AD animal model.&quot;</span>
+<span class="nb">g</span><span class="p">(</span><span class="n">MGI</span><span class="p">:</span><span class="n">Mir155</span><span class="p">)</span> <span class="nb">--</span> <span class="nb">bp</span><span class="p">(</span><span class="n">ADO</span><span class="p">:</span><span class="s">&quot;neuroinflammation&quot;</span><span class="p">)</span>
+
+<span class="kc">SET</span> <span class="n">Evidence</span> <span class="o">=</span> <span class="s">&quot;This event occurred simultaneously with an increase of microglia and astrocyte activation, and before the </span>
+<span class="s">appearance of extracellular Aβ aggregates, suggesting that less complex Aβ species, such as Aβ oligomers may contribute to early </span>
+<span class="s">neuroinflammation.&quot;</span>
+<span class="kc">SET</span> <span class="n">MeSHDisease</span> <span class="o">=</span> <span class="s">&quot;Alzheimer Disease&quot;</span>
+<span class="nb">m</span><span class="p">(</span><span class="n">MGI</span><span class="p">:</span><span class="n">Mir155</span><span class="p">)</span> <span class="nb">-&gt;</span> <span class="nb">bp</span><span class="p">(</span><span class="n">ADO</span><span class="p">:</span><span class="s">&quot;Microglial_activation&quot;</span><span class="p">)</span>
+<span class="nb">m</span><span class="p">(</span><span class="n">MGI</span><span class="p">:</span><span class="n">Mir155</span><span class="p">)</span> <span class="nb">-&gt;</span> <span class="nb">bp</span><span class="p">(</span><span class="n">ADO</span><span class="p">:</span><span class="s">&quot;astrocyte_activation&quot;</span><span class="p">)</span>
+<span class="kc">UNSET</span> <span class="n">MeSHDisease</span>
+
+<span class="kc">SET</span> <span class="n">Evidence</span> <span class="o">=</span> <span class="s">&quot;Our results suggest early miR-155 and c-Jun upregulation in the 3xTg AD mice, as well as in Aβ-activated </span>
+<span class="s">microglia and astrocytes, thus contributing to the production of inflammatory mediators such as IL-6 and IFN-β.&quot;</span>
+<span class="nb">g</span><span class="p">(</span><span class="n">MGI</span><span class="p">:</span><span class="n">Jun</span><span class="p">)</span> <span class="nb">-&gt;</span> <span class="nb">g</span><span class="p">(</span><span class="n">MGI</span><span class="p">:</span><span class="n">Il6</span><span class="p">)</span>
+<span class="nb">g</span><span class="p">(</span><span class="n">MGI</span><span class="p">:</span><span class="n">Mir155</span><span class="p">)</span> <span class="nb">-&gt;</span> <span class="nb">g</span><span class="p">(</span><span class="n">MGI</span><span class="p">:</span><span class="n">Ifnb1</span><span class="p">)</span>
+<span class="kc">UNSET</span> <span class="n">Species</span>
+<span class="c1">#check</span>
+
+<span class="c1">###### paper 10 : 25008863##### in process</span>
+
+<span class="c1">#check for IL-22RA2</span>
+
+<span class="kc">SET</span> <span class="n">Citation</span> <span class="o">=</span><span class="p">{</span><span class="s">&quot;PubMed&quot;</span><span class="p">,</span><span class="s">&quot;Genes Immun. 2014 Oct;15(7):457-65. doi: 10.1038/gene.2014.36. Epub 2014 Jul 10.&quot;</span><span class="p">,</span><span class="s">&quot;25008863&quot;</span><span class="p">}</span>
+<span class="kc">SET</span> <span class="n">Evidence</span> <span class="o">=</span> <span class="s">&quot;Single-nucleotide polymorphisms close to IL22RA2, coding for the soluble interleukin (IL)-22-binding protein </span>
+<span class="s">(IL-22BP), are strongly and reproducibly associated with multiple sclerosis (MS),&quot;</span>
+<span class="kc">SET</span> <span class="n">Species</span> <span class="o">=</span> <span class="s">&quot;10090&quot;</span>
+<span class="nb">g</span><span class="p">(</span><span class="n">MGI</span><span class="p">:</span><span class="n">Il22ra2</span><span class="p">)</span> <span class="nb">--</span> <span class="nb">path</span><span class="p">(</span><span class="n">DO</span><span class="p">:</span><span class="s">&quot;multiple sclerosis&quot;</span><span class="p">)</span>
+
+<span class="kc">SET</span> <span class="n">Evidence</span> <span class="o">=</span> <span class="s">&quot;Because IL-22BP is known to antagonize IL-22 signaling, a primarily pro-inflammatory cytokine, we hypothesized</span>
+<span class="s"> that the Il22ra2-deficient mice would have more severe EAE.Paradoxically, the knockout mice displayed a less severe disease course,</span>
+<span class="s"> less demyelination and less infiltration of immune cells in the CNS.&quot;</span>
+<span class="nb">g</span><span class="p">(</span><span class="n">MGI</span><span class="p">:</span><span class="n">Il22ra2</span><span class="p">)</span> <span class="nb">-&gt;</span> <span class="nb">path</span><span class="p">(</span><span class="n">MESHD</span><span class="p">:</span><span class="s">&quot;Encephalomyelitis, Autoimmune, Experimental&quot;</span><span class="p">)</span>
+
+<span class="kc">SET</span> <span class="n">Evidence</span> <span class="o">=</span> <span class="s">&quot;lack of IL-22BP leads to a higher availability of IL-22, which in the case of CNS inflammation, surprisingly acts</span>
+<span class="s"> in a protective fashion. Thus, deletion of the ortholog of the MS risk gene Il22ra2 in mice has beneficial effects on EAE, which </span>
+<span class="s">may be considered in new therapeutic strategies for treating neuroinflammation&quot;</span>
+<span class="nb">g</span><span class="p">(</span><span class="n">MGI</span><span class="p">:</span><span class="n">Il22ra2</span><span class="p">)</span> <span class="nb">negativeCorrelation</span> <span class="nb">g</span><span class="p">(</span><span class="n">MGI</span><span class="p">:</span><span class="n">Il22</span><span class="p">)</span> 
+<span class="kc">UNSET</span> <span class="n">Species</span>
+
+<span class="c1">###### paper 11 : 25019688####</span>
+
+<span class="kc">SET</span> <span class="n">Citation</span> <span class="o">=</span><span class="p">{</span><span class="s">&quot;PubMed&quot;</span><span class="p">,</span><span class="s">&quot;Neurosci Lett. 2014 Sep 5;579:18-23. doi: 10.1016/j.neulet.2014.07.003. Epub 2014 Jul 11.&quot;</span><span class="p">,</span><span class="s">&quot;25019688&quot;</span><span class="p">}</span>
+<span class="kc">SET</span> <span class="n">Evidence</span> <span class="o">=</span> <span class="s">&quot;Stroke induces a profound neuroinflammatory reaction that leads to secondary cerebral tissue injury. </span>
+<span class="s">Interleukin-10 (IL-10) is a key anti-inflammatory cytokine that is endogenously produced by immune cells and limits this </span>
+<span class="s">inflammatory reaction.Previously, therapeutic administration of IL-10 has been shown to be neuroprotective in experimental stroke&quot;</span>
+<span class="kc">SET</span> <span class="n">Species</span> <span class="o">=</span> <span class="s">&quot;10090&quot;</span>
+<span class="nb">path</span><span class="p">(</span><span class="n">MESHD</span><span class="p">:</span><span class="n">Stroke</span><span class="p">)</span> <span class="nb">--</span> <span class="nb">path</span><span class="p">(</span><span class="n">DO</span><span class="p">:</span><span class="s">&quot;cerebral infarction&quot;</span><span class="p">)</span>
+<span class="nb">g</span><span class="p">(</span><span class="n">MGI</span><span class="p">:</span><span class="n">Il10</span><span class="p">)</span> <span class="nb">-|</span> <span class="nb">path</span><span class="p">(</span><span class="n">MESHD</span><span class="p">:</span><span class="n">Inflammation</span><span class="p">)</span>
+ 
+<span class="kc">SET</span> <span class="n">Evidence</span> <span class="o">=</span> <span class="s">&quot;IL-10 treatment effectively downregulated pro-inflammatory signaling cascades which were upregulated by the </span>
+<span class="s">ischemic lesion in the acute phase after the stroke. Our results emphasize the key role of IL-10 as a neuroprotective cytokine &quot;</span>
+<span class="nb">path</span><span class="p">(</span><span class="n">MESHD</span><span class="p">:</span><span class="n">Stroke</span><span class="p">)</span> <span class="nb">--</span> <span class="nb">path</span><span class="p">(</span><span class="n">ADO</span><span class="p">:</span><span class="s">&quot;ischemic_lesion&quot;</span><span class="p">)</span> 
+<span class="nb">g</span><span class="p">(</span><span class="n">MGI</span><span class="p">:</span><span class="n">Il10</span><span class="p">)</span> <span class="nb">-|</span> <span class="nb">bp</span><span class="p">(</span><span class="n">ADO</span><span class="p">:</span><span class="n">neuroinflammation</span><span class="p">)</span>
+<span class="kc">UNSET</span> <span class="n">Species</span>
+
+<span class="c1">###### paper 12 : 25051986#####</span>
+<span class="kc">SET</span> <span class="n">Citation</span> <span class="o">=</span> <span class="p">{</span><span class="s">&quot;PubMed&quot;</span><span class="p">,</span><span class="s">&quot;J Neuroinflammation. 2014 Jul 23;11:126. doi: 10.1186/1742-2094-11-126.&quot;</span><span class="p">,</span><span class="s">&quot;25051986&quot;</span><span class="p">}</span>
+
+<span class="kc">SET</span> <span class="n">Evidence</span> <span class="o">=</span> <span class="s">&quot;Aging is characterized by a low-grade systemic inflammation that contributes to the pathogenesis of</span>
+<span class="s"> neurodegenerative disorders such as Alzheimer&#39;s disease (AD).&quot;</span>
+<span class="kc">SET</span> <span class="n">Species</span> <span class="o">=</span> <span class="s">&quot;10090&quot;</span>
+<span class="nb">path</span><span class="p">(</span><span class="n">MESHD</span><span class="p">:</span><span class="n">Inflammation</span><span class="p">)</span> <span class="nb">--</span> <span class="nb">path</span><span class="p">(</span><span class="n">MESHD</span><span class="p">:</span><span class="s">&quot;Alzheimer Disease&quot;</span><span class="p">)</span>
+<span class="nb">path</span><span class="p">(</span><span class="n">MESHD</span><span class="p">:</span><span class="s">&quot;Alzheimer Disease&quot;</span><span class="p">)</span> <span class="nb">--</span> <span class="nb">path</span><span class="p">(</span><span class="n">MESHD</span><span class="p">:</span><span class="s">&quot;Neurodegenerative Diseases&quot;</span><span class="p">)</span>
+<span class="nb">bp</span><span class="p">(</span><span class="n">MESHPP</span><span class="p">:</span><span class="n">Aging</span><span class="p">)</span> <span class="nb">--</span> <span class="nb">path</span><span class="p">(</span><span class="n">MESHD</span><span class="p">:</span><span class="n">Inflammation</span><span class="p">)</span>
+
+<span class="kc">SET</span> <span class="n">Evidence</span> <span class="o">=</span> <span class="s">&quot;role of chromatin regulators in inflammation and longevity including the REST corepressor (Rcor)-2 factor,&quot;</span>
+<span class="nb">p</span><span class="p">(</span><span class="n">MGI</span><span class="p">:</span><span class="n">Rcor2</span><span class="p">)</span> <span class="nb">--</span> <span class="nb">path</span><span class="p">(</span><span class="n">MESHD</span><span class="p">:</span><span class="n">Inflammation</span><span class="p">)</span>
+
+<span class="kc">SET</span> <span class="n">Evidence</span> <span class="o">=</span> <span class="s">&quot;Rcor2 reduction in astrocytes was accompanied by an increased basal expression of the interleukin (Il)-6 gene.A negative correlation</span>
+<span class="s">between Rcor2 and Il6 gene expression was also verified in LPS-treated C6 glioma cells&quot;</span>
+<span class="kc">SET</span> <span class="n">Cell</span> <span class="o">=</span> <span class="s">&quot;astrocyte&quot;</span>
+<span class="nb">p</span><span class="p">(</span><span class="n">MGI</span><span class="p">:</span><span class="n">Rcor2</span><span class="p">)</span> <span class="nb">negativeCorrelation</span> <span class="nb">g</span><span class="p">(</span><span class="n">MGI</span><span class="p">:</span><span class="n">Il6</span><span class="p">)</span>
+<span class="kc">UNSET</span> <span class="n">Cell</span>
+
+<span class="kc">SET</span> <span class="n">Evidence</span> <span class="o">=</span> <span class="s">&quot;Data presented here show interplay between Rcor2 downregulation and increased inflammation and suggest that</span>
+<span class="s"> Rcor2 may be a key regulator of inflammaging.&quot;</span>
+<span class="nb">p</span><span class="p">(</span><span class="n">MGI</span><span class="p">:</span><span class="n">Rcor2</span><span class="p">)</span> <span class="nb">negativeCorrelation</span> <span class="nb">path</span><span class="p">(</span><span class="n">MESHD</span><span class="p">:</span><span class="n">Inflammation</span><span class="p">)</span>
+<span class="kc">UNSET</span> <span class="n">Species</span>
+
+<span class="c1">###### paper 13 :25064079### $$$$</span>
+
+<span class="kc">SET</span> <span class="n">Citation</span> <span class="o">=</span> <span class="p">{</span><span class="s">&quot;PubMed&quot;</span><span class="p">,</span><span class="s">&quot;Neurotoxicology. 2014 Sep;44:250-62. doi: 10.1016/j.neuro.2014.07.006. Epub 2014 Jul 23.&quot;</span><span class="p">,</span><span class="s">&quot;25064079&quot;</span><span class="p">}</span>
+
+<span class="kc">SET</span> <span class="n">Evidence</span> <span class="o">=</span> <span class="s">&quot;Neuroprotective effect of the chemical chaperone, trehalose in a chronic MPTP-induced Parkinson&#39;s disease mouse model.&quot;</span>
+<span class="kc">SET</span> <span class="n">Species</span> <span class="o">=</span> <span class="s">&quot;10090&quot;</span>
+<span class="nb">path</span><span class="p">(</span><span class="n">MESHD</span><span class="p">:</span><span class="s">&quot;Parkinson Disease&quot;</span><span class="p">)</span> <span class="nb">--</span> <span class="nb">a</span><span class="p">(</span><span class="n">CHEBI</span><span class="p">:</span><span class="n">trehalose</span><span class="p">)</span>
+<span class="nb">path</span><span class="p">(</span><span class="n">MESHD</span><span class="p">:</span><span class="s">&quot;Parkinson Disease&quot;</span><span class="p">)</span> <span class="nb">--</span> <span class="nb">a</span><span class="p">(</span><span class="n">CHEBI</span><span class="p">:</span><span class="s">&quot;1-methyl-4-phenyl-1,2,3,6-tetrahydropyridine&quot;</span><span class="p">)</span>
+
+<span class="c1">#SET Evidence = &quot;The clinical features of PD emerge due to selective degeneration of dopamine (DA) neurons in the substantia nigra pars compacta (SNc),</span>
+<span class="c1">#which project to the caudate putamen (CPu) where they release DA&quot;</span>
+<span class="c1">#check how to encode dopamine neuron</span>
+
+<span class="kc">SET</span> <span class="n">Evidence</span> <span class="o">=</span> <span class="s">&quot; 1-methyl-4-phenyl-1,2,3,6-tetrahydropyridine (MPTP)-induced damage to DA neurons. &quot;</span>
+<span class="nb">a</span><span class="p">(</span><span class="n">CHEBI</span><span class="p">:</span><span class="s">&quot;1-methyl-4-phenyl-1,2,3,6-tetrahydropyridine&quot;</span><span class="p">)</span> <span class="nb">--</span> <span class="nb">a</span><span class="p">(</span><span class="n">BRCO</span><span class="p">:</span><span class="s">&quot;Ventral_tegmental_area_dopamine_neuron&quot;</span><span class="p">)</span>
+
+<span class="kc">SET</span> <span class="n">Evidence</span> <span class="o">=</span> <span class="s">&quot;In the current in vivo mouse model study, we tested trehalose for its ability to protect against 1-methyl-4-phenyl-1,2,3,6-tetrahydropyridine </span>
+<span class="s">(MPTP)-induced damage to DA neurons.&quot;</span>
+<span class="nb">a</span><span class="p">(</span><span class="n">CHEBI</span><span class="p">:</span><span class="s">&quot;1-methyl-4-phenyl-1,2,3,6-tetrahydropyridine&quot;</span><span class="p">)</span> <span class="nb">--</span> <span class="nb">a</span><span class="p">(</span><span class="n">CHEBI</span><span class="p">:</span><span class="s">&quot;dAMP residue&quot;</span><span class="p">)</span>
+
+<span class="kc">SET</span> <span class="n">Evidence</span> <span class="o">=</span> <span class="s">&quot;MPTP-induced losses in tyrosine hydroxylase and DA transporter immunoreactivity in the ventral midbrain SNc and CPu were significantly </span>
+<span class="s">reduced by trehalose. Decreases in CPu dopamine levels produced by MPTP were also blocked by trehalose. Microglial activation and astrocytic hypertrophy</span>
+<span class="s">induced by MPTP were greatly reduced by trehalose, indicating protection against neuroinflammation.&quot;</span>
+<span class="nb">a</span><span class="p">(</span><span class="n">CHEBI</span><span class="p">:</span><span class="n">trehalose</span><span class="p">)</span> <span class="nb">--</span> <span class="nb">a</span><span class="p">(</span><span class="n">CHEBI</span><span class="p">:</span><span class="s">&quot;1-methyl-4-phenyl-1,2,3,6-tetrahydropyridine&quot;</span><span class="p">)</span>
+<span class="nb">a</span><span class="p">(</span><span class="n">CHEBI</span><span class="s">&quot;1-methyl-4-phenyl-1,2,3,6-tetrahydropyridine&quot;</span><span class="p">)</span> <span class="nb">-|</span> <span class="nb">p</span><span class="p">(</span><span class="n">MGI</span><span class="p">:</span><span class="n">Th</span><span class="p">)</span>
+<span class="nb">a</span><span class="p">(</span><span class="n">CHEBI</span><span class="p">:</span><span class="n">trehalose</span><span class="p">)</span> <span class="nb">-&gt;</span> <span class="nb">p</span><span class="p">(</span><span class="n">MGI</span><span class="p">:</span><span class="n">Th</span><span class="p">)</span>
+
+<span class="kc">SET</span> <span class="n">Evidence</span> <span class="o">=</span> <span class="s">&quot; Two tight junctional proteins, ZO-1 and occludin, are downregulated following MPTP treatment and trehalose blocks this effect&quot;</span>
+<span class="nb">a</span><span class="p">(</span><span class="n">CHEBI</span><span class="p">:</span><span class="n">trehalose</span><span class="p">)</span> <span class="nb">-&gt;</span> <span class="nb">g</span><span class="p">(</span><span class="n">MGI</span><span class="p">:</span><span class="n">Tjp1</span><span class="p">)</span>
+<span class="nb">a</span><span class="p">(</span><span class="n">CHEBI</span><span class="p">:</span><span class="n">trehalose</span><span class="p">)</span> <span class="nb">-&gt;</span> <span class="nb">g</span><span class="p">(</span><span class="n">MGI</span><span class="p">:</span><span class="n">Ocln</span><span class="p">)</span>
+
+<span class="c1">#SET Evidence = &quot;the glucose transporter-1 that is expressed in brain endothelial cells is also protected by trehalose from MPTP-induced down-regulation&quot;</span>
+<span class="kc">UNSET</span> <span class="n">Species</span>  
+
+<span class="c1">####### paper 14 : 25086214 ###$$$</span>
+
+<span class="kc">SET</span> <span class="n">Citation</span> <span class="o">=</span> <span class="p">{</span><span class="s">&quot;PubMed&quot;</span><span class="p">,</span><span class="s">&quot;Stem Cell Res. 2014 Sep;13(2):227-39. doi: 10.1016/j.scr.2014.06.001. Epub 2014 Jun 21.&quot;</span><span class="p">,</span><span class="s">&quot;25086214&quot;</span><span class="p">}</span>
+<span class="kc">SET</span> <span class="n">Evidence</span> <span class="o">=</span> <span class="s">&quot;cell migration is a crucial element in regenerative processes in MS, dictating the route of delivery, when cell transplantation is considered.&quot;</span>
+<span class="kc">SET</span> <span class="n">Species</span> <span class="o">=</span> <span class="s">&quot;10090&quot;</span>
+<span class="nb">path</span><span class="p">(</span><span class="n">MESHD</span><span class="p">:</span><span class="s">&quot;Multiple Sclerosis&quot;</span><span class="p">)</span> <span class="nb">--</span> <span class="nb">bp</span><span class="p">(</span><span class="n">GOBP</span><span class="p">:</span><span class="s">&quot;cell migration&quot;</span><span class="p">)</span>
+
+<span class="kc">SET</span> <span class="n">Evidence</span> <span class="o">=</span> <span class="s">&quot;We have previously shown that inflammation triggers migration of multi-potential neural precursor cells (NPCs) into the white matter </span>
+<span class="s">of experimental autoimmune encephalomyelitis (EAE) rodents, a widely used model of MS.&quot;</span>
+<span class="kc">SET</span> <span class="n">MeSHDisease</span> <span class="o">=</span> <span class="s">&quot;Encephalomyelitis, Autoimmune, Experimental&quot;</span>
+<span class="nb">bp</span><span class="p">(</span><span class="n">GOBP</span><span class="p">:</span><span class="s">&quot;cell migration&quot;</span><span class="p">)</span> <span class="nb">--</span> <span class="nb">path</span><span class="p">(</span><span class="n">MESHD</span><span class="p">:</span><span class="n">Inflammation</span><span class="p">)</span>
+<span class="kc">UNSET</span> <span class="n">MeSHDisease</span>
+
+<span class="kc">SET</span> <span class="n">Evidence</span> <span class="o">=</span> <span class="s">&quot;Stromal cell-derived factor-1α, monocyte chemo-attractant protein-1 and hepatocyte growth factor were expressed in the EAE brain and</span>
+<span class="s">specifically in microglia and astrocytes.&quot;</span>
+<span class="kc">SET</span> <span class="n">MeSHAnatomy</span> <span class="o">=</span> <span class="p">{</span><span class="s">&quot;Microglia&quot;</span><span class="p">,</span><span class="s">&quot;Astrocytes&quot;</span><span class="p">}</span>
+<span class="nb">path</span><span class="p">(</span><span class="n">MESHD</span><span class="p">:</span><span class="n">Encephalomyelitis</span><span class="p">)</span> <span class="nb">--</span> <span class="nb">r</span><span class="p">(</span><span class="n">MGI</span><span class="p">:</span><span class="n">Cxcl12</span><span class="p">)</span>
+<span class="nb">path</span><span class="p">(</span><span class="n">MESHD</span><span class="p">:</span><span class="n">Encephalomyelitis</span><span class="p">)</span> <span class="nb">--</span> <span class="nb">r</span><span class="p">(</span><span class="n">MGI</span><span class="p">:</span><span class="n">Hgf</span><span class="p">)</span>
+<span class="kc">UNSET</span> <span class="n">MeSHAnatomy</span>
+
+<span class="kc">SET</span> <span class="n">Evidence</span> <span class="o">=</span> <span class="s">&quot;Selective blockage of CXCR4, CCR2 or c-Met partially inhibited NPC migration in EAE brains&quot;</span>
+<span class="kc">SET</span> <span class="n">MeSHDisease</span> <span class="o">=</span> <span class="s">&quot;Encephalomyelitis, Autoimmune, Experimental&quot;</span>
+<span class="kc">SET</span> <span class="n">CellLine</span> <span class="o">=</span> <span class="n">NPC</span>
+<span class="nb">g</span><span class="p">(</span><span class="n">MGI</span><span class="p">:</span><span class="n">Cxcr4</span><span class="p">)</span> <span class="nb">-&gt;</span> <span class="nb">bp</span><span class="p">(</span><span class="n">GOBP</span><span class="p">:</span><span class="s">&quot;cell migration&quot;</span><span class="p">)</span>
+<span class="nb">g</span><span class="p">(</span><span class="n">MGI</span><span class="p">:</span><span class="n">Ccr2</span><span class="p">)</span> <span class="nb">-&gt;</span> <span class="nb">bp</span><span class="p">(</span><span class="n">GOBP</span><span class="p">:</span><span class="s">&quot;cell migration&quot;</span><span class="p">)</span>
+<span class="nb">g</span><span class="p">(</span><span class="n">MGI</span><span class="p">:</span><span class="n">Met</span><span class="p">)</span> <span class="nb">-&gt;</span> <span class="nb">bp</span><span class="p">(</span><span class="n">GOBP</span><span class="p">:</span><span class="s">&quot;cell migration&quot;</span><span class="p">)</span>
+<span class="kc">UNSET</span> <span class="n">CellLine</span>
+<span class="kc">UNSET</span> <span class="n">MeSHDisease</span>
+<span class="kc">UNSET</span> <span class="n">Species</span>
+
+<span class="c1">###paper 15 : 25086357#####</span>
+
+<span class="kc">SET</span> <span class="n">Citation</span> <span class="o">=</span> <span class="p">{</span><span class="s">&quot;PubMed&quot;</span><span class="p">,</span><span class="s">&quot;Biochem Biophys Res Commun. 2014 Aug 22;451(2):239-45. doi: 10.1016/j.bbrc.2014.07.107. Epub 2014 Jul 30.&quot;</span><span class="p">,</span><span class="s">&quot;25086357&quot;</span><span class="p">}</span>
+
+<span class="kc">SET</span> <span class="n">Evidence</span> <span class="o">=</span> <span class="s">&quot;Microglia-mediated neuroinflammation is implicated in the pathogenesis of several neurodegenerative disorders.&quot;</span>
+<span class="nb">path</span><span class="p">(</span><span class="n">ADO</span><span class="p">:</span><span class="n">neuroinflammation</span><span class="p">)</span> <span class="nb">--</span> <span class="nb">path</span><span class="p">(</span><span class="n">ADO</span><span class="p">:</span><span class="s">&quot;neurodegenerative_disease&quot;</span><span class="p">)</span>
+
+<span class="kc">SET</span> <span class="n">Evidence</span> <span class="o">=</span> <span class="s">&quot;Rotenone is an environmental toxin that has been shown to activate microglia and neuroinflammation&quot;</span>
+<span class="nb">a</span><span class="p">(</span><span class="n">CHEBI</span><span class="p">:</span><span class="n">rotenone</span><span class="p">)</span> <span class="nb">-&gt;</span> <span class="nb">bp</span><span class="p">(</span><span class="n">ADO</span><span class="p">:</span><span class="s">&quot;Microglial_activation&quot;</span><span class="p">)</span>
+<span class="nb">a</span><span class="p">(</span><span class="n">CHEBI</span><span class="p">:</span><span class="n">rotenone</span><span class="p">)</span> <span class="nb">-&gt;</span> <span class="nb">path</span><span class="p">(</span><span class="n">ADO</span><span class="p">:</span><span class="s">&quot;neuroinflammation&quot;</span><span class="p">)</span>
+
+<span class="kc">SET</span> <span class="n">Evidence</span> <span class="o">=</span> <span class="s">&quot;rotenone enhanced the levels of M1 phenotypic genes including TNF-α, iNOS and COX-2/PGE2 but reduced that of M2 markers such as Ym1/2</span>
+<span class="s"> and IL-10 in mouse primary and immortalized microglia.&quot;</span>
+<span class="kc">SET</span> <span class="n">Species</span> <span class="o">=</span> <span class="s">&quot;10090&quot;</span>
+<span class="nb">a</span><span class="p">(</span><span class="n">CHEBI</span><span class="p">:</span><span class="n">rotenone</span><span class="p">)</span> <span class="nb">-&gt;</span> <span class="nb">g</span><span class="p">(</span><span class="n">MGI</span><span class="p">:</span><span class="n">Tnf</span><span class="p">)</span>
+<span class="nb">a</span><span class="p">(</span><span class="n">CHEBI</span><span class="p">:</span><span class="n">rotenone</span><span class="p">)</span> <span class="nb">-&gt;</span> <span class="nb">g</span><span class="p">(</span><span class="n">MGI</span><span class="p">:</span><span class="n">Nos2</span><span class="p">)</span>
+<span class="nb">a</span><span class="p">(</span><span class="n">CHEBI</span><span class="p">:</span><span class="n">rotenone</span><span class="p">)</span> <span class="nb">-&gt;</span> <span class="nb">g</span><span class="p">(</span><span class="n">MGI</span><span class="p">:</span><span class="n">Ptgs2</span><span class="p">)</span>
+<span class="nb">a</span><span class="p">(</span><span class="n">CHEBI</span><span class="p">:</span><span class="n">rotenone</span><span class="p">)</span> <span class="nb">-|</span> <span class="nb">p</span><span class="p">(</span><span class="n">MGI</span><span class="p">:</span><span class="n">Il10</span><span class="p">)</span>
+<span class="kc">UNSET</span> <span class="n">Species</span>
+<span class="c1">#check</span>
+
+<span class="kc">SET</span> <span class="n">Evidence</span> <span class="o">=</span> <span class="s">&quot;transcription and protein expression of cystathionine-β-synthase (CBS), as well as hydrogen sulfide (H2S) production were decreased in </span>
+<span class="s">rotenone-treated primary microglia.&quot;</span>
+<span class="nb">a</span><span class="p">(</span><span class="n">CHEBI</span><span class="p">:</span><span class="n">rotenone</span><span class="p">)</span> <span class="nb">-|</span> <span class="nb">a</span><span class="p">(</span><span class="n">CHEBI</span><span class="p">:</span><span class="s">&quot;EC 4.2.1.22 (cystathionine beta-synthase) inhibitor&quot;</span><span class="p">)</span>
+<span class="nb">a</span><span class="p">(</span><span class="n">CHEBI</span><span class="p">:</span><span class="n">rotenone</span><span class="p">)</span> <span class="nb">-|</span> <span class="nb">a</span><span class="p">(</span><span class="n">CHEBI</span><span class="p">:</span><span class="s">&quot;hydrogen sulfide&quot;</span><span class="p">)</span>
+
+<span class="kc">SET</span> <span class="n">Evidence</span> <span class="o">=</span> <span class="s">&quot;via triggering ROS formation, rotenone suppressed the CBS-H2S pathway and thus promoted microglia polarization toward M1 </span>
+<span class="s">pro-inflammatory phenotype.&quot;</span>
+
+<span class="nb">a</span><span class="p">(</span><span class="n">CHEBI</span><span class="p">:</span><span class="n">rotenone</span><span class="p">)</span> <span class="nb">-&gt;</span> <span class="nb">a</span><span class="p">(</span><span class="n">CHEBI</span><span class="p">:</span><span class="s">&quot;reactive oxygen species&quot;</span><span class="p">)</span>
+
+<span class="c1">#### paper 16: 25093162####</span>
+
+<span class="kc">SET</span> <span class="n">Citation</span> <span class="o">=</span> <span class="p">{</span><span class="s">&quot;PubMed&quot;</span><span class="p">,</span><span class="s">&quot;Biomed Res Int. 2014;2014:290182. doi: 10.1155/2014/290182. Epub 2014 Jul 1.&quot;</span><span class="p">,</span><span class="s">&quot;25093162&quot;</span><span class="p">}</span>
+
+<span class="kc">SET</span> <span class="n">Evidence</span> <span class="o">=</span> <span class="s">&quot;Tumor necrosis factor-α (TNF-α) is a critical proinflammatory cytokine regulating neuroinflammation. Elevated levels of TNF-α have </span>
+<span class="s">been associated with various neurodegenerative diseases such as Alzheimer&#39;s disease and Parkinson&#39;s disease&quot;</span>
+<span class="nb">g</span><span class="p">(</span><span class="n">MGI</span><span class="p">:</span><span class="n">Tnf</span><span class="p">)</span> <span class="nb">--</span> <span class="nb">path</span><span class="p">(</span><span class="n">ADO</span><span class="p">:</span><span class="n">Neuroinflammation</span><span class="p">)</span>
+<span class="nb">g</span><span class="p">(</span><span class="n">MGI</span><span class="p">:</span><span class="n">Tnf</span><span class="p">)</span> <span class="nb">--</span> <span class="nb">path</span><span class="p">(</span><span class="n">MESHD</span><span class="p">:</span><span class="s">&quot;Alzheimer Disease&quot;</span><span class="p">)</span>
+
+<span class="kc">SET</span> <span class="n">Evidence</span> <span class="o">=</span> <span class="s">&quot;we report that RIP3-mediated necroptosis, a form of regulated necrosis, is activated in the mouse hippocampus after </span>
+<span class="s">intracerebroventricular injection of TNF-α.&quot;</span>
+<span class="kc">SET</span> <span class="n">MeSHAnatomy</span> <span class="o">=</span> <span class="n">Hippocampus</span>
+<span class="nb">g</span><span class="p">(</span><span class="n">MGI</span><span class="p">:</span><span class="n">Tnf</span><span class="p">)</span> <span class="nb">-&gt;</span> <span class="nb">act</span><span class="p">(</span><span class="nb">p</span><span class="p">(</span><span class="n">MGI</span><span class="p">:</span><span class="n">Ripk3</span><span class="p">))</span>
+
+
+<span class="kc">SET</span> <span class="n">Evidence</span> <span class="o">=</span> <span class="s">&quot;IP3 deficiency attenuates TNF-α-initiated loss of hippocampal neurons.&quot;</span>
+<span class="nb">g</span><span class="p">(</span><span class="n">MGI</span><span class="p">:</span><span class="n">Itpka</span><span class="p">)</span> <span class="nb">--</span> <span class="nb">g</span><span class="p">(</span><span class="n">MGI</span><span class="p">:</span><span class="n">Tnf</span><span class="p">)</span>
+<span class="kc">SET</span> <span class="n">Evidence</span> <span class="o">=</span> <span class="s">&quot; TNF-α promotes CYLD-RIP1-RIP3-MLKL-mediated necroptosis of hippocampal neurons largely bypassing ROS accumulation and calcium influx.&quot;</span>
+<span class="nb">g</span><span class="p">(</span><span class="n">MGI</span><span class="p">:</span><span class="n">Tnf</span><span class="p">)</span> <span class="nb">--</span> <span class="nb">g</span><span class="p">(</span><span class="n">MGI</span><span class="p">:</span><span class="n">Cyld</span><span class="p">)</span>
+<span class="nb">g</span><span class="p">(</span><span class="n">MGI</span><span class="p">:</span><span class="n">Tnf</span><span class="p">)</span> <span class="nb">--</span> <span class="nb">g</span><span class="p">(</span><span class="n">MGI</span><span class="p">:</span><span class="n">Ralbp1</span><span class="p">)</span>
+<span class="nb">g</span><span class="p">(</span><span class="n">MGI</span><span class="p">:</span><span class="n">Tnf</span><span class="p">)</span> <span class="nb">--</span> <span class="nb">g</span><span class="p">(</span><span class="n">MGI</span><span class="p">:</span><span class="n">Mprip</span><span class="p">)</span>
+<span class="nb">g</span><span class="p">(</span><span class="n">MGI</span><span class="p">:</span><span class="n">Tnf</span><span class="p">)</span> <span class="nb">--</span> <span class="nb">g</span><span class="p">(</span><span class="n">MGI</span><span class="p">:</span><span class="n">Mlkl</span><span class="p">)</span>
+<span class="nb">g</span><span class="p">(</span><span class="n">MGI</span><span class="p">:</span><span class="n">Cyld</span><span class="p">)</span> <span class="nb">--</span> <span class="nb">bp</span><span class="p">(</span><span class="n">GOBP</span><span class="p">:</span><span class="s">&quot;execution phase of necroptosis&quot;</span><span class="p">)</span>
+<span class="nb">g</span><span class="p">(</span><span class="n">MGI</span><span class="p">:</span><span class="n">Ralbp1</span><span class="p">)</span> <span class="nb">--</span> <span class="nb">bp</span><span class="p">(</span><span class="n">GOBP</span><span class="p">:</span><span class="s">&quot;execution phase of necroptosis&quot;</span><span class="p">)</span>
+<span class="nb">g</span><span class="p">(</span><span class="n">MGI</span><span class="p">:</span><span class="n">Mprip</span><span class="p">)</span> <span class="nb">--</span> <span class="nb">bp</span><span class="p">(</span><span class="n">GOBP</span><span class="p">:</span><span class="s">&quot;execution phase of necroptosis&quot;</span><span class="p">)</span>
+<span class="nb">g</span><span class="p">(</span><span class="n">MGI</span><span class="p">:</span><span class="n">Mlkl</span><span class="p">)</span> <span class="nb">--</span> <span class="nb">bp</span><span class="p">(</span><span class="n">GOBP</span><span class="p">:</span><span class="s">&quot;execution phase of necroptosis&quot;</span><span class="p">)</span>
+<span class="kc">UNSET</span> <span class="n">MeSHAnatomy</span>
+
+<span class="c1">###### paper 17 : 25172655 ##### $$$$</span>
+<span class="kc">SET</span> <span class="n">Citation</span> <span class="o">=</span> <span class="p">{</span><span class="s">&quot;PubMed&quot;</span><span class="p">,</span><span class="s">&quot;Biochem Biophys Res Commun. 2014 Sep 26;452(3):450-6. doi: 10.1016/j.bbrc.2014.08.092. Epub 2014 Aug 27.&quot;</span><span class="p">,</span><span class="s">&quot;25172655&quot;</span><span class="p">}</span>
+
+<span class="kc">SET</span> <span class="n">Evidence</span> <span class="o">=</span> <span class="s">&quot;Alcohol-induced neuroinflammation is mediated by the innate immunesystem.&quot;</span>
+<span class="kc">SET</span> <span class="n">Species</span> <span class="o">=</span> <span class="s">&quot;10090&quot;</span>
+<span class="nb">a</span><span class="p">(</span><span class="n">CHEBI</span><span class="p">:</span><span class="n">alcohol</span><span class="p">)</span> <span class="nb">--</span> <span class="nb">path</span><span class="p">(</span><span class="n">ADO</span><span class="p">:</span><span class="s">&quot;neuroinflammation&quot;</span><span class="p">)</span>
+
+<span class="kc">SET</span> <span class="n">Evidence</span> <span class="o">=</span> <span class="s">&quot;The miRNA miR-339-5p has previously been found to be upregulated in alcohol-induced neuroinflammation.&quot;</span>
+<span class="nb">path</span><span class="p">(</span><span class="n">ADO</span><span class="p">:</span><span class="n">Neuroinflammation</span><span class="p">)</span> <span class="nb">-&gt;</span> <span class="nb">g</span><span class="p">(</span><span class="n">MGI</span><span class="p">:</span><span class="n">Mlxip</span><span class="p">)</span>
+
+<span class="kc">SET</span> <span class="n">Evidence</span> <span class="o">=</span> <span class="s">&quot;miR-339-5p inhibits alcohol-induced brain inflammation through regulating NF-κB pathway.&quot;</span>
+<span class="kc">SET</span> <span class="n">MeSHAnatomy</span> <span class="o">=</span> <span class="s">&quot;Brain&quot;</span>
+<span class="nb">g</span><span class="p">(</span><span class="n">MGI</span><span class="p">:</span><span class="n">Mlxip</span><span class="p">)</span> <span class="nb">-|</span> <span class="nb">r</span><span class="p">(</span><span class="n">MGI</span><span class="p">:</span><span class="n">Nfkb1</span><span class="p">)</span>
+<span class="kc">UNSET</span> <span class="n">MeSHAnatomy</span>
+
+<span class="kc">SET</span> <span class="n">Evidence</span> <span class="o">=</span> <span class="s">&quot;Our results show that alcohol induces transcription of miR 339-5p, IL-6, IL-1β and TNF-α in mouse brain </span>
+<span class="s">tissue and isolated microglial cells by activating NF-κB. &quot;</span>
+
+<span class="kc">SET</span> <span class="n">MeSHAnatomy</span> <span class="o">=</span> <span class="p">{</span><span class="s">&quot;Brain&quot;</span><span class="p">,</span><span class="s">&quot;Tissues&quot;</span><span class="p">}</span> 
+<span class="nb">g</span><span class="p">(</span><span class="n">MGI</span><span class="p">:</span><span class="n">Nfasc</span><span class="p">)</span> <span class="nb">-&gt;</span> <span class="nb">r</span><span class="p">(</span><span class="n">MGI</span><span class="p">:</span><span class="n">Mir339</span><span class="p">)</span>
+<span class="nb">g</span><span class="p">(</span><span class="n">MGI</span><span class="p">:</span><span class="n">Nfasc</span><span class="p">)</span> <span class="nb">-&gt;</span> <span class="nb">r</span><span class="p">(</span><span class="n">MGI</span><span class="p">:</span><span class="n">Il6</span><span class="p">)</span>
+<span class="nb">g</span><span class="p">(</span><span class="n">MGI</span><span class="p">:</span><span class="n">Nfasc</span><span class="p">)</span> <span class="nb">-&gt;</span> <span class="nb">r</span><span class="p">(</span><span class="n">MGI</span><span class="p">:</span><span class="n">Ptx3</span><span class="p">)</span>
+<span class="nb">g</span><span class="p">(</span><span class="n">MGI</span><span class="p">:</span><span class="n">Nfasc</span><span class="p">)</span> <span class="nb">-&gt;</span> <span class="nb">r</span><span class="p">(</span><span class="n">MGI</span><span class="p">:</span><span class="n">Tnf</span><span class="p">)</span>
+<span class="kc">UNSET</span> <span class="n">MeSHAnatomy</span> 
+<span class="kc">UNSET</span> <span class="n">Species</span>
+</pre></div>
+</body>
+</html>
